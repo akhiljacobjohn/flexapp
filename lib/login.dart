@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xfff5f8fa),
+      backgroundColor: const Color(0xfff0f0ff),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -32,10 +32,10 @@ class _LoginState extends State<Login> {
           Padding(
               padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
               child: Text(
-                'Login',
+                'Get started.',
                 style: TextStyle(
-                    color: const Color(0xff0CA750),
-                    fontSize: 34,
+                    color: const Color(0xff9146FF),
+                    fontSize: 28,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Lato'),
               )),
@@ -44,7 +44,7 @@ class _LoginState extends State<Login> {
               child: Text(
                 'Enter your 10 digit mobile number to continue',
                 style: TextStyle(
-                    color: const Color(0xff333B5C),
+                    color: const Color(0xff35465c),
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'Lato'),
@@ -62,7 +62,7 @@ class _LoginState extends State<Login> {
                 ], // Only numbers can be entered
                 enableInteractiveSelection: false,
                 style: TextStyle(
-                    color: const Color(0xff464646),
+                    color: const Color(0xff353D5D),
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                     // letterSpacing: 1,
@@ -72,7 +72,7 @@ class _LoginState extends State<Login> {
                   alignLabelWithHint: true,
                   prefixText: "+91 ",
                   prefixStyle: TextStyle(
-                      color: const Color(0xff464646),
+                      color: const Color(0xff353D5D),
                       fontWeight: FontWeight.w500,
                       fontSize: 20,
                       // letterSpacing: 1,
@@ -100,7 +100,7 @@ class _LoginState extends State<Login> {
                         text:
                             'By continuing, you indicate that you have read and acknowledge Atlas\'s\n',
                         style: TextStyle(
-                            color: const Color(0xff333B5C),
+                            color: const Color(0xff35465c),
                             fontSize: 10,
                             fontWeight: FontWeight.w400,
                             fontFamily: 'Lato',
@@ -110,7 +110,7 @@ class _LoginState extends State<Login> {
                       TextSpan(
                           text: 'Terms of Service',
                           style: TextStyle(
-                              color: const Color(0xff008200),
+                              color: const Color(0xff9146FF),
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               fontFamily: 'Lato'),
@@ -134,7 +134,7 @@ class _LoginState extends State<Login> {
                       TextSpan(
                         text: 'Privacy Policy',
                         style: TextStyle(
-                            color: const Color(0xff008200),
+                            color: const Color(0xff9146FF),
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Lato'),
@@ -153,7 +153,7 @@ class _LoginState extends State<Login> {
                 padding: EdgeInsets.fromLTRB(20, 0, 20, 5),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: const Color(0xff009a44),
+                    primary: const Color(0xff9146FF),
                     onPrimary: Colors.white,
                     // foreground
                   ),

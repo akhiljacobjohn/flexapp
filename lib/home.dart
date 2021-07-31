@@ -7,11 +7,20 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  int index = 0;
+
+
+  _navigateToScreens(int indx){
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: const Color(0xfff4f4f4),
+      backgroundColor: const Color(0xfff0f0ff),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: false,
@@ -44,7 +53,7 @@ class _HomeState extends State<Home> {
            ),
           ],
         ),
-        backgroundColor:  const Color(0xfff4f4f4),
+        backgroundColor:  const Color(0xfff0f0ff),
         elevation: 1,
         actions: [
            IconButton(onPressed: (){}, icon: Image.asset('assets/images/search-icon.png', width: 20,))
@@ -52,35 +61,52 @@ class _HomeState extends State<Home> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color(0xfff0f0ff),
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: true,
         showUnselectedLabels: true,
-        currentIndex: 0, // this will be set when a new tab is tapped
+        currentIndex: index,
+        onTap: (int index) {
+          setState(() {
+            this.index = index;
+          }
+          );
+         _navigateToScreens(index);
+        }, // this will be set when a new tab is tapped
         items: [
           BottomNavigationBarItem(
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/home-selected-icon.png', width: 25,),),
+          icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/home-unselected-icon.png', width: 25,),),
 
-              icon: Padding(padding: EdgeInsets.only(bottom: 5),child: Container(width: 24, height: 24, child: Image.asset('assets/images/home-selected-icon.png', width: 28,),)),
             label: 'Home',
 
           ),
           BottomNavigationBarItem(
 
-             icon: Padding(padding: EdgeInsets.only(bottom: 5),child: Container(width: 20, height: 20, child: Image.asset('assets/images/directory-unselected-icon.png', width: 25,),),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/directory-selected-icon.png', width: 20,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/directory-unselected-icon.png', width: 20,),),
+
+
             label: 'Directory',
           ),
           BottomNavigationBarItem(
 
-              icon: Padding(padding: EdgeInsets.only(bottom: 5),child: Container(width: 24, height: 24, child: Image.asset('assets/images/add-post-unselected-icon.png', width: 28,),),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/add-post-selected-icon.png', width: 24,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/add-post-unselected-icon.png', width: 24,),),
+
             label: 'Add Post',
           ),
           BottomNavigationBarItem(
 
-              icon: Padding(padding: EdgeInsets.only(bottom: 5),child: Container(width: 28, height: 28, child: Image.asset('assets/images/business-profile-unselected-icon.png', width: 28,),),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/business-profile-selected-icon.png', width: 22,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/business-profile-unselected-icon.png', width: 22,),),
+
             label: 'Profile',
           ),
           BottomNavigationBarItem(
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5),child: Image.asset('assets/images/settings-selected-icon.png', width: 24,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5),child: Image.asset('assets/images/settings-unselected-icon.png', width: 24,),),
 
-            icon: Padding(padding: EdgeInsets.only(bottom: 5),child: Container(width: 24, height: 24, child: Image.asset('assets/images/settings-unselected-icon.png', width: 28,),),),
             label: 'Settings',
           ),
         ],

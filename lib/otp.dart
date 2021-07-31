@@ -1,4 +1,5 @@
 import 'package:atlas/pincode.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'login.dart';
@@ -14,34 +15,43 @@ class _OTPState extends State<OTP> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xfff5f8fa),
+      backgroundColor: const Color(0xfff0f0ff),
       appBar: AppBar(
         leading: BackButton(
           color: const Color(0xff262C45),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
+        centerTitle: true,
+        title: Text(
+          'OTP',
+          style: TextStyle(
+              color: const Color(0xff9146FF),
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Lato'),
+        ),
       ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          // Padding(
+          //     padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+          //     child: Text(
+          //       'OTP',
+          //       style: TextStyle(
+          //           color: const Color(0xff9146FF),
+          //           fontSize: 28,
+          //           fontWeight: FontWeight.bold,
+          //           fontFamily: 'Lato'),
+          //     )),
           Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-              child: Text(
-                'OTP',
-                style: TextStyle(
-                    color: const Color(0xff0CA750),
-                    fontSize: 34,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Lato'),
-              )),
-          Padding(
-              padding: EdgeInsets.fromLTRB(20, 30, 20, 40),
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 40),
               child: Text(
                 'Enter the code we sent to \n+91 9567890488',
                 style: TextStyle(
-                    color: const Color(0xff333B5C),
+                    color: const Color(0xff35465c),
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                     fontFamily: 'Lato'),
@@ -64,7 +74,7 @@ class _OTPState extends State<OTP> {
                   showCursor: false,
                   enableInteractiveSelection: false,
                   style: TextStyle(
-                    color: const Color(0xff464646),
+                    color: const Color(0xff35465c),
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                     // letterSpacing: 1,
@@ -72,7 +82,7 @@ class _OTPState extends State<OTP> {
                   decoration: InputDecoration(
                     fillColor: Colors.black,
                     hintText: "_",
-                    hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff464646), ),
+                    hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff35465c), ),
                     alignLabelWithHint: true,
                     border: InputBorder.none,
                     focusedBorder: InputBorder.none,
@@ -87,7 +97,7 @@ class _OTPState extends State<OTP> {
                   borderRadius: BorderRadius.circular(5),
                   border: Border.all(
                     width: 0.5,
-                    color: const Color(0xff009a44),
+                    color: const Color(0xff9146FF),
                   ),
                 ),
               ),
@@ -102,14 +112,14 @@ class _OTPState extends State<OTP> {
                     textInputAction: TextInputAction.next,
                     onChanged: (_) => FocusScope.of(context).nextFocus(),
                     showCursor: false,style: TextStyle(
-                      color: const Color(0xff464646),
+                      color: const Color(0xff35465c),
                       fontWeight: FontWeight.w500,
                       fontSize: 20,
                       // letterSpacing: 1,
                       fontFamily: 'Open Sans'),
                     decoration: InputDecoration(
                       hintText: "_",
-                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff464646), ),
+                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff35465c), ),
                       alignLabelWithHint: true,
                       border: InputBorder.none,
                       focusedBorder: InputBorder.none,
@@ -123,7 +133,7 @@ class _OTPState extends State<OTP> {
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       width: 0.5,
-                      color: const Color(0xff009a44),
+                      color: const Color(0xff9146FF),
                     ),
                   )),
               SizedBox(
@@ -137,7 +147,7 @@ class _OTPState extends State<OTP> {
                     textInputAction: TextInputAction.next,
                     onChanged: (_) => FocusScope.of(context).nextFocus(),
                     style: TextStyle(
-                      color: const Color(0xff464646),
+                      color: const Color(0xff35465c),
 
                       fontWeight: FontWeight.w500,
                       fontSize: 20,
@@ -145,7 +155,7 @@ class _OTPState extends State<OTP> {
                       fontFamily: 'Open Sans'),
                     decoration: InputDecoration(
                       hintText: "_",
-                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff464646), ),
+                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff35465c), ),
                       alignLabelWithHint: true,
                       border: InputBorder.none,
                       focusedBorder: InputBorder.none,
@@ -159,7 +169,7 @@ class _OTPState extends State<OTP> {
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       width: 0.5,
-                      color: const Color(0xff009a44),
+                      color: const Color(0xff9146FF),
                     ),
                   )),
               SizedBox(
@@ -173,14 +183,14 @@ class _OTPState extends State<OTP> {
                     textInputAction: TextInputAction.next,
                     onChanged: (_) => FocusScope.of(context).nextFocus(),
                     style: TextStyle(
-                      color: const Color(0xff464646),
+                      color: const Color(0xff35465c),
                       fontWeight: FontWeight.w500,
                       fontSize: 20,
                       // letterSpacing: 1,
                       fontFamily: 'Open Sans'),
                     decoration: InputDecoration(
                       hintText: "_",
-                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff464646), ),
+                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff35465c), ),
                       alignLabelWithHint: true,
                       border: InputBorder.none,
                       focusedBorder: InputBorder.none,
@@ -194,7 +204,7 @@ class _OTPState extends State<OTP> {
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       width: 0.5,
-                      color: const Color(0xff009a44),
+                      color: const Color(0xff9146FF),
                     ),
                   )),
               SizedBox(
@@ -208,14 +218,14 @@ class _OTPState extends State<OTP> {
                     textInputAction: TextInputAction.next,
                     onChanged: (_) => FocusScope.of(context).nextFocus(),
                     style: TextStyle(
-                      color: const Color(0xff464646),
+                      color: const Color(0xff35465c),
                       fontWeight: FontWeight.w500,
                       fontSize: 20,
                       // letterSpacing: 1,
                       fontFamily: 'Open Sans'),
                     decoration: InputDecoration(
                       hintText: "_",
-                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff464646), ),
+                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff35465c), ),
                       alignLabelWithHint: true,
                       border: InputBorder.none,
                       focusedBorder: InputBorder.none,
@@ -229,7 +239,7 @@ class _OTPState extends State<OTP> {
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       width: 0.5,
-                      color: const Color(0xff009a44),
+                      color: const Color(0xff9146FF),
                     ),
                   )),
               SizedBox(
@@ -243,14 +253,14 @@ class _OTPState extends State<OTP> {
                     textInputAction: TextInputAction.next,
                     onChanged: (_) => FocusScope.of(context).nextFocus(),
                     style: TextStyle(
-                      color: const Color(0xff464646),
+                      color: const Color(0xff35465c),
                       fontWeight: FontWeight.w500,
                       fontSize: 20,
                       // letterSpacing: 1,
                       fontFamily: 'Open Sans'),
                     decoration: InputDecoration(
                       hintText: "_",
-                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff464646), ),
+                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff35465c), ),
                       alignLabelWithHint: true,
                       border: InputBorder.none,
                       focusedBorder: InputBorder.none,
@@ -264,10 +274,40 @@ class _OTPState extends State<OTP> {
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       width: 0.5,
-                      color: const Color(0xff009a44),
+                      color: const Color(0xff9146FF),
                     ),
                   )),
             ],
+          ),
+SizedBox(height: 40,),
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text:
+                  'Didn\'t receive code? ',
+                  style: TextStyle(
+                      color: const Color(0xff35465c),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Lato',
+                    ),
+                ),
+                TextSpan(
+                    text: ' Resend',
+                    style: TextStyle(
+                        color: const Color(0xff9146FF),
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Lato'),
+                    recognizer: DoubleTapGestureRecognizer()
+                      ..onDoubleTap = () {
+                        // Double tapped.
+                      }),
+
+
+              ],
+            ),
           ),
         ],
       ),
@@ -279,7 +319,7 @@ class _OTPState extends State<OTP> {
           padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: const Color(0xff009a44),
+              primary: const Color(0xff9146FF),
               onPrimary: Colors.white,
               // foreground
             ),

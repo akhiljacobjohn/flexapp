@@ -4,10 +4,10 @@ import 'colors.dart';
 class AtlasAppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
-      primaryColor: const Color(0xff009a44),
-      accentColor: const Color(0xff009a44),
+      primaryColor: const Color(0xff9146FF),
+      accentColor: const Color(0xff9146FF),
       textSelectionTheme: TextSelectionThemeData(
-        cursorColor: const Color(0xff009a44),
+        cursorColor: const Color(0xff9146FF),
       ),
 
       // Define the default font family.
@@ -25,7 +25,7 @@ class AtlasAppTheme {
 
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
-          borderSide: BorderSide(width: 1, color: const Color(0xff0CA750)),
+          borderSide: BorderSide(width: 1, color: const Color(0xff9146FF)),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -33,7 +33,7 @@ class AtlasAppTheme {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
-          borderSide: BorderSide(width: 1, color: const Color(0xff0CA750)),
+          borderSide: BorderSide(width: 1, color: const Color(0xff9146FF)),
         ),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(4)),
