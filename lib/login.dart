@@ -1,7 +1,12 @@
+import 'dart:async';
+
 import 'package:atlas/otp.dart';
+import 'package:atlas/utils/connection_status.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -10,31 +15,51 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   var focusNode = FocusNode();
+  StreamSubscription<ConnectivityResult> subscription;
+  String connStr = 'false';
+  final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
   @override
   void initState() {
+    super.initState();
+    subscription = Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
+      // Got a new connectivity status!
+      connStr = result.toString();
+      print(connStr);
+    });
     focusNode.requestFocus();
   }
 
   @override
+  dispose() {
+    super.dispose();
+
+    subscription.cancel();
+  }
+
+
+  @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
+
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xfff0f0ff),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0,
+      // ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+              padding: EdgeInsets.fromLTRB(20, 60, 20, 20),
               child: Text(
-                'Get started.',
+                'Get Started.',
                 style: TextStyle(
-                    color: const Color(0xff9146FF),
+                    color: const Color(0xff7d2ae8),
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Lato'),
@@ -110,7 +135,7 @@ class _LoginState extends State<Login> {
                       TextSpan(
                           text: 'Terms of Service',
                           style: TextStyle(
-                              color: const Color(0xff9146FF),
+                              color: const Color(0xff7d2ae8),
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               fontFamily: 'Lato'),
@@ -134,7 +159,7 @@ class _LoginState extends State<Login> {
                       TextSpan(
                         text: 'Privacy Policy',
                         style: TextStyle(
-                            color: const Color(0xff9146FF),
+                            color: const Color(0xff7d2ae8),
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Lato'),
@@ -153,12 +178,18 @@ class _LoginState extends State<Login> {
                 padding: EdgeInsets.fromLTRB(20, 0, 20, 5),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: const Color(0xff9146FF),
+                    primary: const Color(0xff7d2ae8),
                     onPrimary: Colors.white,
                     // foreground
                   ),
                   onPressed: () {
-                    Navigator.push(
+
+                    connStr=='false'?Fluttertoast.showToast(
+                      msg: 'No Internet Connection',
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 1,
+                    ):Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => OTP()),
                     );

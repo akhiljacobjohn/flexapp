@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'home.dart';
 
@@ -12,15 +13,25 @@ class Pincode extends StatefulWidget {
 class _PincodeState extends State<Pincode> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new WillPopScope(
+        onWillPop: () async {
+      // Fluttertoast.showToast(
+      //   msg: 'Some text',
+      //   toastLength: Toast.LENGTH_SHORT,
+      //   gravity: ToastGravity.BOTTOM,
+      //   timeInSecForIosWeb: 1,
+      // );
+      return true;
+        },
+
+      child: Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xfff0f0ff),
       appBar: AppBar(
-        leading: BackButton(
-          color: const Color(0xff262C45),
-        ),
+
         backgroundColor: Colors.transparent,
         elevation: 0,
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -88,7 +99,7 @@ SizedBox(height: 30,),
       padding: EdgeInsets.fromLTRB(20, 25, 20, 25),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: const Color(0xff9146FF),
+          primary: const Color(0xff7d2ae8),
           onPrimary: Colors.white,
           // foreground
         ),
@@ -108,6 +119,6 @@ SizedBox(height: 30,),
         ),
       ),
     ),)
-    );
+    ),);
   }
 }

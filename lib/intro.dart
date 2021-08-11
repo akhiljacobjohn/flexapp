@@ -1,9 +1,10 @@
+import 'dart:async';
+
 import 'package:atlas/utils/connection_status.dart';
 import 'package:atlas/utils/enums.dart';
-import 'package:atlas/utils/network_aware.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 
 import 'login.dart';
 
@@ -13,73 +14,64 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
+
+
+
   @override
   void initState() {
     super.initState();
+
   }
+
+
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xfff0f0ff),
-      body: StreamProvider<NetworkStatus>(
-        create: (context) =>
-            ConnectivityStatusService().networkStatusController.stream,
-        child: NetworkAware(
-          onlineChild: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Image.asset(
-                    'assets/images/dining.png',
-                    width: 300,
-                    height: 300,
-                  ),
-                ),
-                Image.asset(
-                  'assets/images/atlas-black.png',
-                  width: 85,
-                  //     height: 350,
-                ),
-                //    Text(
-                //      'Hi!',
-                //      style: TextStyle(
-                //          color: const Color(0xff000000),
-                //          fontSize: 30,
-                //          fontWeight: FontWeight.bold,
-                //          fontFamily: 'Lato'),
-                //    ),
-                SizedBox(
-                  height: 30,
-                ),
-                // Text(
-                //   'Welcome to Atlas',
-                //   style: TextStyle(
-                //       color: const Color(0xff000000),
-                //       fontSize: 28,
-                //       fontWeight: FontWeight.bold,
-                //       fontFamily: 'Lato'),
-                // ),
-                // SizedBox(
-                //   height: 30,
-                // ),
-                Text(
-                  'Discover local businesses and essential services in your area',
-                  style: TextStyle(
-                      color: const Color(0xff35465c),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Lato'),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-              ],
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/dining.png',
+              width: 320,
+              height: 320,
             ),
-          ),
-          offlineChild: Container(child: Text('You are Offline!'),),
+            // SizedBox(
+            //   height: 40,
+            // ),
+            Expanded(
+              child: SizedBox(
+                height: 1,
+              ),
+            ),
+            Image.asset(
+              'assets/images/atlas-def-splash.png',
+              width: 80,
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Text(
+              'Discover local businesses and essential services in your area',
+              style: TextStyle(
+                  color: const Color(0xff35465c),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Lato'),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+           // Text('Connection Status: ${_connectionStatus.toString()}')
+
+          ],
         ),
       ),
       bottomNavigationBar: Container(
@@ -88,7 +80,7 @@ class _IntroScreenState extends State<IntroScreen> {
           padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: const Color(0xff9146FF),
+              primary: const Color(0xff7d2ae8),
               onPrimary: Colors.white,
               // foreground
             ),
