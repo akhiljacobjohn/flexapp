@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:atlas/pincode.dart';
+import 'package:atlas/utils/connection_status.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'login.dart';
+import 'get_started.dart';
 
 class OTP extends StatefulWidget {
   @override
@@ -11,13 +14,21 @@ class OTP extends StatefulWidget {
 
 class _OTPState extends State<OTP> {
   var focusNode = FocusNode();
+
+
+
+  @override
+  void initState() {
+    super.initState();
+
+        }
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: const Color(0xfff0f0ff),
         appBar: AppBar(
-
+automaticallyImplyLeading: false,
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),

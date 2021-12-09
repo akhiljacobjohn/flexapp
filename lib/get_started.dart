@@ -3,59 +3,54 @@ import 'dart:async';
 import 'package:atlas/otp.dart';
 import 'package:atlas/utils/connection_status.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class Login extends StatefulWidget {
+class GetStarted extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _GetStartedState createState() => _GetStartedState();
 }
 
-class _LoginState extends State<Login> {
+class _GetStartedState extends State<GetStarted> {
   var focusNode = FocusNode();
-  StreamSubscription<ConnectivityResult> subscription;
-  String connStr = 'false';
-  final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
+  StreamSubscription<dynamic> _connectionChangeStream;
+  bool conn = false;
+  final phoneNumberController = TextEditingController();
+  FirebaseAuth auth = FirebaseAuth.instance;
 
   @override
   void initState() {
     super.initState();
-    subscription = Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
-      // Got a new connectivity status!
-      connStr = result.toString();
-      print(connStr);
-    });
-    focusNode.requestFocus();
+
   }
 
   @override
   dispose() {
     super.dispose();
 
-    subscription.cancel();
+    phoneNumberController.dispose();
+    _connectionChangeStream.cancel();
   }
 
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
-
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xfff0f0ff),
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      // ),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-              padding: EdgeInsets.fromLTRB(20, 60, 20, 20),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
               child: Text(
                 'Get Started.',
                 style: TextStyle(
@@ -79,9 +74,11 @@ class _LoginState extends State<Login> {
             child: Container(
               height: 50,
               child: TextFormField(
+                controller: phoneNumberController,
                 autofocus: true,
                 focusNode: focusNode,
                 keyboardType: TextInputType.phone,
+                maxLength: 10,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
                 ], // Only numbers can be entered
@@ -102,6 +99,7 @@ class _LoginState extends State<Login> {
                       fontSize: 20,
                       // letterSpacing: 1,
                       fontFamily: 'Open Sans'),
+                  counterText: "",
                 ),
               ),
             ),
@@ -184,15 +182,20 @@ class _LoginState extends State<Login> {
                   ),
                   onPressed: () {
 
-                    connStr=='false'?Fluttertoast.showToast(
-                      msg: 'No Internet Connection',
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                      timeInSecForIosWeb: 1,
-                    ):Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => OTP()),
-                    );
+                   conn == false
+                        ? Fluttertoast.showToast(
+                            msg: "No Connection",
+                            toastLength: Toast.LENGTH_LONG,
+                            gravity: ToastGravity.SNACKBAR,
+                            // timeInSecForIosWeb: 1,
+                            // backgroundColor: Colors.red,
+                            // textColor: Colors.white,
+                            // fontSize: 16.0
+                          )
+                        : Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => OTP()),
+                          );
                   },
                   child: Text(
                     'SEND OTP',

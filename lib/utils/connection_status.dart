@@ -1,47 +1,33 @@
 import 'dart:async';
-
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:data_connection_checker/data_connection_checker.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class ConnectivityStatusService extends StatefulWidget {
-  @override
-  _ConnectivityStatusServiceState createState() =>
-      _ConnectivityStatusServiceState();
-}
+class ConnectionUtil {
+  StreamSubscription<DataConnectionStatus> listener;
+  var InternetStatus = "Unknown";
+  var contentmessage = "Unknown";
 
-class _ConnectivityStatusServiceState extends State<ConnectivityStatusService> {
-  final Connectivity _connectivity = Connectivity();
-  StreamSubscription<ConnectivityResult> _connectivitySubscription;
-  ConnectivityResult connectivityResult = ConnectivityResult.none;
 
-  @override
-  void initState() {
-    super.initState();
-
-    _connectivitySubscription =
-        _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
-  }
-
-// Make sure to cancel subscription after you are done
-  @override
-  dispose() {
-    super.dispose();
-
-    _connectivitySubscription.cancel();
-  }
-
-  Future<void> _updateConnectionStatus(ConnectivityResult result) async {
-    setState((){
-      connectivityResult = result;
+  checkConnection(BuildContext context) async{
+    listener = DataConnectionChecker().onStatusChange.listen((status) {
+      switch (status){
+        case DataConnectionStatus.connected:
+          InternetStatus = "Connected";
+          contentmessage = "Connected";
+        //  _showDialog(InternetStatus,contentmessage,context);
+        //  Fluttertoast.showToast(msg: InternetStatus);
+          break;
+        case DataConnectionStatus.disconnected:
+          InternetStatus = "No Connection ";
+          contentmessage = "No Connection";
+          Fluttertoast.showToast(msg: InternetStatus);
+          break;
+      }
     });
+    return await DataConnectionChecker().connectionStatus;
   }
 
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-     child: Text('Connectivity Result is ' + connectivityResult.toString()),
-    );
-  }
 }
