@@ -17,7 +17,7 @@ Future<void> main() async {
     // statusBarColor: const Color(0xff7d2ae8),
     //  statusBarColor: Colors.transparent,
 
-    systemNavigationBarColor: const Color(0xff141414),
+   // systemNavigationBarColor: const Color(0xff141414),
   ));
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
@@ -39,6 +39,7 @@ class AtlasApp extends StatelessWidget {
       themeMode: _themeMode,
       initialRoute: '/',
       routes: {
+       // '/': (context) => SplashScreen(),
         '/': (context) => SplashScreen(),
         '/app-init': (context) => AppInit(),
         '/intro': (context) => IntroScreen(),

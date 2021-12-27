@@ -16,12 +16,12 @@ class Splash extends State<SplashScreen> {
 
   @override
   void initState() {
-
     super.initState();
-    Timer(Duration(seconds: 2), () => Navigator.pushReplacementNamed(context, '/app-init'));
+     Timer(Duration(seconds: 2), () => Navigator.pushReplacementNamed(context, '/app-init'));
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        //  systemNavigationBarColor: const Color(0xff9146FF),
+          systemNavigationBarColor: const Color(0xff412081),
         ));
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
   }
 
   void connectionChanged(dynamic hasConnection) {
@@ -35,15 +35,23 @@ class Splash extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff1b1d20),
+      backgroundColor: const Color(0xff412081),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: Image.asset(
-              'assets/images/atlas-green.png',
-              width: 110,
+              'assets/images/brand.png',
+              width: 140,
             ),
+            // child:Text(
+            //   'localtym',
+            //   style: TextStyle(
+            //       fontSize: 45,
+            //       color: const Color(0xffffffff),
+            //       fontFamily: 'Trebuchet MS', letterSpacing: 1,
+            //       fontWeight: FontWeight.w600),
+            // ),
           ),
         ],
       ),

@@ -24,34 +24,41 @@ class _OTPState extends State<OTP> {
         }
   @override
   Widget build(BuildContext context) {
-    return new WillPopScope(child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: const Color(0xfff0f0ff),
+    return new Scaffold(
+
+
+        resizeToAvoidBottomInset:false,
+        backgroundColor: const Color(0xff232A53),
+        //backgroundColor: const Color(0xffffffff),
         appBar: AppBar(
-automaticallyImplyLeading: false,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
+          titleSpacing: -10,
+          backgroundColor: const Color(0xff232A53),
+          // backgroundColor: const Color(0xff3c4852),
+        //  elevation: 0,
+        //  automaticallyImplyLeading: false,
+           title: Text('OTP', style: TextStyle(color: const Color(0xaaffffff), fontSize: 24,  fontFamily: 'Helvetica', fontWeight: FontWeight.w600),),
+         // centerTitle: true,
         ),
         body: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // Padding(
+            //     padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+            //     child: Text(
+            //       'OTP',
+            //       style: TextStyle(
+            //           color: const Color(0xff7d2ae8),
+            //           fontSize: 28,
+            //           fontWeight: FontWeight.bold,
+            //           fontFamily: 'Lato'),
+            //     )),
             Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                padding: EdgeInsets.fromLTRB(20, 40, 20, 40),
                 child: Text(
-                  'OTP',
+                  'Enter the six digit code sent to your phone number\n+91 9567890488',
                   style: TextStyle(
-                      color: const Color(0xff7d2ae8),
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Lato'),
-                )),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 40),
-                child: Text(
-                  'Enter the code sent to +91 9567890488',
-                  style: TextStyle(
-                      color: const Color(0xff35465c),
+                      color: Colors.white54,
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
                       fontFamily: 'Lato'),
@@ -64,7 +71,7 @@ automaticallyImplyLeading: false,
                 Container(
                   width: 45,
                   height: 50,
-                  padding: EdgeInsets.only(top: 4),
+
                   child: TextFormField(
 
                     textInputAction: TextInputAction.next,
@@ -74,15 +81,16 @@ automaticallyImplyLeading: false,
                     showCursor: false,
                     enableInteractiveSelection: false,
                     style: TextStyle(
-                        color: const Color(0xff373737),
+                        color: Colors.white70,
                         fontWeight: FontWeight.w500,
                         fontSize: 20,
                         // letterSpacing: 1,
-                        fontFamily: 'Open Sans'),
+                        fontFamily: 'Lato'),
                     decoration: InputDecoration(
-                      hintText: "_",
-                      hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff373737), ),
-                      alignLabelWithHint: true,
+                      filled: true,
+                      fillColor: const Color(0x50344081),
+                      hintText: "*",
+                      hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ),alignLabelWithHint: true,
                       border: InputBorder.none,
                       focusedBorder: InputBorder.none,
                       enabledBorder: InputBorder.none,
@@ -106,19 +114,130 @@ automaticallyImplyLeading: false,
                 Container(
                     width: 45,
                     height: 50,
-                    padding: EdgeInsets.only(top: 4),
+
                     child: TextFormField(maxLength: 1, textAlign: TextAlign.center,
                       textInputAction: TextInputAction.next,
                       onChanged: (_) => FocusScope.of(context).nextFocus(),
-                      showCursor: false,style: TextStyle(
-                          color: const Color(0xff373737),
+                      showCursor: false,
+                      style: TextStyle(
+                          color: Colors.white70,
                           fontWeight: FontWeight.w500,
                           fontSize: 20,
                           // letterSpacing: 1,
-                          fontFamily: 'Open Sans'),
+                          fontFamily: 'Lato'),
                       decoration: InputDecoration(
-                        hintText: "_",
-                        hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff373737), ),
+                        filled: true,
+                        fillColor: const Color(0x50344081),
+                        hintText: "*",
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ),alignLabelWithHint: true,
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        counterText: "",
+
+                      ),),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                        width: 0.5,
+                        color: const Color(0xff7d2ae8),
+                      ),
+                    )),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                    width: 45,
+                    height: 50,
+
+                    child: TextFormField(maxLength: 1, textAlign: TextAlign.center,    showCursor: false,
+                      textInputAction: TextInputAction.next,
+                      onChanged: (_) => FocusScope.of(context).nextFocus(),
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          // letterSpacing: 1,
+                          fontFamily: 'Lato'),
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: const Color(0x50344081),
+                        hintText: "*",
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ),alignLabelWithHint: true,
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        counterText: "",
+
+                      ),),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                        width: 0.5,
+                        color: const Color(0xff7d2ae8),
+                      ),
+                    )),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                    width: 45,
+                    height: 50,
+
+                    child: TextFormField(maxLength: 1, textAlign: TextAlign.center,    showCursor: false,
+                      textInputAction: TextInputAction.next,
+                      onChanged: (_) => FocusScope.of(context).nextFocus(),
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          // letterSpacing: 1,
+                          fontFamily: 'Lato'),
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: const Color(0x50344081),
+                        hintText: "*",
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ), alignLabelWithHint: true,
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        counterText: "",
+
+                      ),),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                        width: 0.5,
+                        color: const Color(0xff7d2ae8),
+                      ),
+                    )),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                    width: 45,
+                    height: 50,
+
+                    child: TextFormField(maxLength: 1, textAlign: TextAlign.center,    showCursor: false,
+                      textInputAction: TextInputAction.next,
+                      onChanged: (_) => FocusScope.of(context).nextFocus(),
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          // letterSpacing: 1,
+                          fontFamily: 'Lato'),
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: const Color(0x50344081),
+                        hintText: "*",
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ),
                         alignLabelWithHint: true,
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
@@ -141,125 +260,21 @@ automaticallyImplyLeading: false,
                 Container(
                     width: 45,
                     height: 50,
-                    padding: EdgeInsets.only(top: 4),
+
                     child: TextFormField(maxLength: 1, textAlign: TextAlign.center,    showCursor: false,
                       textInputAction: TextInputAction.next,
                       onChanged: (_) => FocusScope.of(context).nextFocus(),
                       style: TextStyle(
-                          color: const Color(0xff373737),
-
+                          color: Colors.white70,
                           fontWeight: FontWeight.w500,
                           fontSize: 20,
                           // letterSpacing: 1,
-                          fontFamily: 'Open Sans'),
+                          fontFamily: 'Lato'),
                       decoration: InputDecoration(
-                        hintText: "_",
-                        hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff373737), ),
-                        alignLabelWithHint: true,
-                        border: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-                        counterText: "",
-
-                      ),),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                        width: 0.5,
-                        color: const Color(0xff7d2ae8),
-                      ),
-                    )),
-                SizedBox(
-                  width: 10,
-                ),
-                Container(
-                    width: 45,
-                    height: 50,
-                    padding: EdgeInsets.only(top: 4),
-                    child: TextFormField(maxLength: 1, textAlign: TextAlign.center,    showCursor: false,
-                      textInputAction: TextInputAction.next,
-                      onChanged: (_) => FocusScope.of(context).nextFocus(),
-                      style: TextStyle(
-                          color: const Color(0xff373737),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                          // letterSpacing: 1,
-                          fontFamily: 'Open Sans'),
-                      decoration: InputDecoration(
-                        hintText: "_",
-                        hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff373737), ),
-                        alignLabelWithHint: true,
-                        border: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-                        counterText: "",
-
-                      ),),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                        width: 0.5,
-                        color: const Color(0xff7d2ae8),
-                      ),
-                    )),
-                SizedBox(
-                  width: 10,
-                ),
-                Container(
-                    width: 45,
-                    height: 50,
-                    padding: EdgeInsets.only(top: 4),
-                    child: TextFormField(maxLength: 1, textAlign: TextAlign.center,    showCursor: false,
-                      textInputAction: TextInputAction.next,
-                      onChanged: (_) => FocusScope.of(context).nextFocus(),
-                      style: TextStyle(
-                          color: const Color(0xff373737),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                          // letterSpacing: 1,
-                          fontFamily: 'Open Sans'),
-                      decoration: InputDecoration(
-                        hintText: "_",
-                        hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff373737), ),
-                        alignLabelWithHint: true,
-                        border: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-                        counterText: "",
-
-                      ),),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                        width: 0.5,
-                        color: const Color(0xff7d2ae8),
-                      ),
-                    )),
-                SizedBox(
-                  width: 10,
-                ),
-                Container(
-                    width: 45,
-                    height: 50,
-                    padding: EdgeInsets.only(top: 4),
-                    child: TextFormField(maxLength: 1, textAlign: TextAlign.center,    showCursor: false,
-                      textInputAction: TextInputAction.next,
-                      onChanged: (_) => FocusScope.of(context).nextFocus(),
-                      style: TextStyle(
-                          color: const Color(0xff373737),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                          // letterSpacing: 1,
-                          fontFamily: 'Open Sans'),
-                      decoration: InputDecoration(
-                        hintText: "_",
-                        hintStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w200, color: const Color(0xff373737), ),
+                        filled: true,
+                        fillColor: const Color(0x50344081),
+                        hintText: "*",
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ),
                         alignLabelWithHint: true,
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
@@ -286,7 +301,7 @@ automaticallyImplyLeading: false,
                     text:
                     'Didn\'t receive code? ',
                     style: TextStyle(
-                      color: const Color(0xff35465c),
+                      color: Colors.white54,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Lato',
@@ -318,7 +333,7 @@ automaticallyImplyLeading: false,
               padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: const Color(0xff7d2ae8),
+                  primary: const Color(0xff7D2AE8),
                   onPrimary: Colors.white,
                   // foreground
                 ),
@@ -340,6 +355,7 @@ automaticallyImplyLeading: false,
         )
 
 
-    ), onWillPop: () async => false);
+
+    );
   }
 }

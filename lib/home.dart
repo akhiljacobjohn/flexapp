@@ -20,9 +20,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: const Color(0xfff0f0ff),
+      backgroundColor: const Color(0xff232A53),
       appBar: AppBar(
         automaticallyImplyLeading: false,
+
         centerTitle: false,
         title: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,7 +37,7 @@ class _HomeState extends State<Home> {
                Padding(
                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                  child: Text('Home', style: TextStyle(
-                     color: const Color(0xff333B5C),
+                     color: Colors.white,
                      fontSize: 18,
                      fontWeight: FontWeight.w600,
                      fontFamily: 'Lato'),),
@@ -44,7 +45,7 @@ class _HomeState extends State<Home> {
                Padding(
                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                  child: Text('Location name comes here..', style: TextStyle(
-                     color: const Color(0xff333B5C),
+                     color: Colors.white,
                      fontSize: 15,
                      //fontWeight: FontWeight.w600,
                      fontFamily: 'Lato'),),
@@ -53,16 +54,17 @@ class _HomeState extends State<Home> {
            ),
           ],
         ),
-        backgroundColor:  const Color(0xfff0f0ff),
-        elevation: 1,
+        backgroundColor: const Color(0xff232A53),
+        elevation: 3,
         actions: [
            IconButton(onPressed: (){}, icon: Image.asset('assets/images/search-icon.png', width: 20,))
 
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xfff0f0ff),
+        backgroundColor: const Color(0xff232A53),
         type: BottomNavigationBarType.fixed,
+        elevation:10,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         currentIndex: index,
@@ -75,45 +77,45 @@ class _HomeState extends State<Home> {
         }, // this will be set when a new tab is tapped
         items: [
           BottomNavigationBarItem(
-            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/home-selected-icon.png', width: 25,),),
-          icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/home-unselected-icon.png', width: 25,),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/home-selected-icon.png', width: 20,),),
+          icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/home-unselected-icon.png', width: 20,),),
 
             label: 'Home',
 
           ),
           BottomNavigationBarItem(
 
-            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/directory-selected-icon.png', width: 20,),),
-            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/directory-unselected-icon.png', width: 20,),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/directory-selected-icon.png', width: 18,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/directory-unselected-icon.png', width: 18,),),
 
 
             label: 'Directory',
           ),
           BottomNavigationBarItem(
 
-            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/add-post-selected-icon.png', width: 24,),),
-            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/add-post-unselected-icon.png', width: 24,),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/add-post-selected-icon.png', width: 20,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/add-post-unselected-icon.png', width: 20,),),
 
             label: 'Add Post',
           ),
           BottomNavigationBarItem(
 
-            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/business-profile-selected-icon.png', width: 22,),),
-            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/business-profile-unselected-icon.png', width: 22,),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/business-profile-selected-icon.png', width: 20,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/business-profile-unselected-icon.png', width: 20,),),
 
             label: 'Profile',
           ),
           BottomNavigationBarItem(
-            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5),child: Image.asset('assets/images/settings-selected-icon.png', width: 24,),),
-            icon: Padding(padding: EdgeInsets.only(bottom: 5),child: Image.asset('assets/images/settings-unselected-icon.png', width: 24,),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5),child: Image.asset('assets/images/settings-selected-icon.png', width: 22,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5),child: Image.asset('assets/images/settings-unselected-icon.png', width: 22,),),
 
             label: 'Settings',
           ),
         ],
         selectedLabelStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
         unselectedLabelStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
-        selectedItemColor: const Color(0xff262C45),
-        unselectedItemColor: const Color(0xff262C45),
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
       ),
     );
   }

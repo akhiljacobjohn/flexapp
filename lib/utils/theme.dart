@@ -7,7 +7,7 @@ class AtlasAppTheme {
 
       primaryColor: const Color(0xff7d2ae8),
       accentColor: const Color(0xff7d2ae8),
-      scaffoldBackgroundColor: const Color(0xFF1f1f1f),
+      scaffoldBackgroundColor: const Color(0xff232A53),
       textSelectionTheme: TextSelectionThemeData(
         cursorColor: const Color(0xff7d2ae8),
 
@@ -28,15 +28,15 @@ class AtlasAppTheme {
 
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
-          borderSide: BorderSide(width: 1, color: const Color(0xff7d2ae8)),
+          borderSide: BorderSide(width: 1, color: const Color(0xff313E68)),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
-          borderSide: BorderSide(width: 1, color: const Color(0xff7d2ae8)),
+          borderSide: BorderSide(width: 1, color: const Color(0xff313E68)),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
-          borderSide: BorderSide(width: 1, color: const Color(0xff7d2ae8)),
+          borderSide: BorderSide(width: 1, color: const Color(0xff313E68)),
         ),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(4)),

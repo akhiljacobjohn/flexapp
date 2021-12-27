@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="def_splash_screen_bg">#1b1d20</color>
-    <color name="statusBarColor">#141414</color>
-    <color name="navBarColor">#141414</color>
+    <color name="def_splash_screen_bg">#412081</color>
+    <color name="statusBarColor">#412081</color>
+    <color name="navBarColor">#412081</color>
 </resources>
