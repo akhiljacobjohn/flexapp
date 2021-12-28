@@ -310,7 +310,7 @@ class _OTPState extends State<OTP> {
                   TextSpan(
                       text: ' Resend',
                       style: TextStyle(
-                          color: const Color(0xff7d2ae8),
+                          color: const Color(0xffffffff),
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Lato'),

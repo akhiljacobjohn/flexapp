@@ -26,11 +26,11 @@ class _PincodeState extends State<Pincode> {
 
       child: Scaffold(
           resizeToAvoidBottomInset:false,
-          backgroundColor: const Color(0xff232A53),
+          backgroundColor: const Color(0xff15202f),
           //backgroundColor: const Color(0xffffffff),
           appBar: AppBar(
             titleSpacing: -10,
-            backgroundColor: const Color(0xff232A53),
+            backgroundColor: const Color(0xff15202f),
             // backgroundColor: const Color(0xff3c4852),
             //  elevation: 0,
             //  automaticallyImplyLeading: false,

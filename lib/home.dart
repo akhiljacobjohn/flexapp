@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: const Color(0xff232A53),
+      backgroundColor: const Color(0xff15202f),
       appBar: AppBar(
         automaticallyImplyLeading: false,
 
@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
            ),
           ],
         ),
-        backgroundColor: const Color(0xff232A53),
+        backgroundColor: const Color(0xff15202f),
         elevation: 3,
         actions: [
            IconButton(onPressed: (){}, icon: Image.asset('assets/images/search-icon.png', width: 20,))

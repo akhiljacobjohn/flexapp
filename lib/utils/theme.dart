@@ -4,12 +4,14 @@ import 'colors.dart';
 class AtlasAppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
-
+      brightness: Brightness.dark,
       primaryColor: const Color(0xff7d2ae8),
       accentColor: const Color(0xff7d2ae8),
       scaffoldBackgroundColor: const Color(0xff232A53),
       textSelectionTheme: TextSelectionThemeData(
         cursorColor: const Color(0xff7d2ae8),
+        selectionHandleColor: const Color(0xff7d2ae8),
+
 
       ),
 
@@ -63,6 +65,7 @@ class AtlasAppTheme {
 
   static ThemeData get darkTheme {
     return ThemeData(
+      brightness: Brightness.light,
       primaryColor: const Color(0xff009a44),
       accentColor: const Color(0xff009a44),
       textSelectionTheme: TextSelectionThemeData(
