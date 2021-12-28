@@ -1,3 +1,3 @@
-# atlas
+# localtym
 
-Atlas - Discover Local Businesses and Essential Services in your area.
+Localtym - Discover what's new in your local area
