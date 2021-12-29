@@ -34,7 +34,7 @@ class _ProfileState extends State<Profile> {
             // backgroundColor: const Color(0xff3c4852),
               elevation: 1,
             //  automaticallyImplyLeading: false,
-            title: Text('Profile', style: TextStyle(color: const Color(0xaaffffff), fontSize: 24,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
+            title: Text('Create Profile', style: TextStyle(color: const Color(0xaaffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
             // centerTitle: true,
           ),
       body: Column(
@@ -223,7 +223,7 @@ cursorHeight: 24,
 
                   suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0),
                       //child: Image.asset('assets/images/locate.png')),
-                      child: Icon(Icons.location_history, color: Colors.white70, size: 20,)),
+                      child: Icon(Icons.location_searching, color: Colors.white70, size: 18,)),
                   suffixIconConstraints: BoxConstraints(
 
                       maxHeight: 30,

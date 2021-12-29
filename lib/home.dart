@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: const Color(0xff15202f),
+      backgroundColor: const Color(0xff232A53),
       appBar: AppBar(
         automaticallyImplyLeading: false,
 
@@ -54,8 +54,8 @@ class _HomeState extends State<Home> {
            ),
           ],
         ),
-        backgroundColor: const Color(0xff15202f),
-        elevation: 3,
+        backgroundColor: const Color(0xff232A53),
+        elevation: 1,
         actions: [
            IconButton(onPressed: (){}, icon: Image.asset('assets/images/search-icon.png', width: 20,))
 
@@ -64,7 +64,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color(0xff232A53),
         type: BottomNavigationBarType.fixed,
-        elevation:10,
+        elevation:24,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         currentIndex: index,
