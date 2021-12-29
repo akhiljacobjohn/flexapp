@@ -206,63 +206,68 @@ class _IntroScreenState extends State<IntroScreen> {
             //         fontFamily: 'Lato'),
             //   ),
             // ),
-
             Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 40),
-              child: RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
-                  text:
-                      'Have an account already?  ',
-                  style: TextStyle(
-                      height: 1.5,
-                      color: Colors.white70,
-                      fontSize: 11,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Lato'),
-                  children: [
-                    TextSpan(
-                      text: 'Login',
-                      recognizer: new TapGestureRecognizer()
-                        ..onTap = () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Login()),
-                            ),
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 40),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Login()),
+                    );
+                  },
+
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      text:
+                      'Have an account already? ',
                       style: TextStyle(
-                          color: const Color(0xffffffff),
+                          height: 1.5,
+                          color: Colors.white70,
                           fontSize: 11,
                           fontWeight: FontWeight.w500,
-                          // decoration: TextDecoration.underline,
                           fontFamily: 'Lato'),
+                      children: [
+                        TextSpan(
+                          text: 'Login',
+                          style: TextStyle(
+                              color: const Color(0xffffffff),
+                              fontSize: 11,
+                              fontWeight: FontWeight.w500,
+                              // decoration: TextDecoration.underline,
+                              fontFamily: 'Lato'),
+                        ),
+                        // TextSpan(
+                        //   text: ' and ',
+                        //   style: TextStyle(
+                        //       color: Colors.white70,
+                        //       fontSize: 11,
+                        //       fontWeight: FontWeight.w500,
+                        //       fontFamily: 'Lato'),
+                        // ),
+                        // TextSpan(
+                        //   text: 'Privacy Policy.',
+                        //   recognizer: new TapGestureRecognizer()
+                        //     ..onTap = () => Navigator.push(
+                        //           context,
+                        //           MaterialPageRoute(
+                        //               builder: (context) => PrivacyPolicy()),
+                        //         ),
+                        //   style: TextStyle(
+                        //       color: const Color(0xff7D2AE8),
+                        //       fontSize: 11,
+                        //       fontWeight: FontWeight.w500,
+                        //       //  decoration: TextDecoration.underline,
+                        //       fontFamily: 'Lato'),
+                        // ),
+                      ],
                     ),
-                    // TextSpan(
-                    //   text: ' and ',
-                    //   style: TextStyle(
-                    //       color: Colors.white70,
-                    //       fontSize: 11,
-                    //       fontWeight: FontWeight.w500,
-                    //       fontFamily: 'Lato'),
-                    // ),
-                    // TextSpan(
-                    //   text: 'Privacy Policy.',
-                    //   recognizer: new TapGestureRecognizer()
-                    //     ..onTap = () => Navigator.push(
-                    //           context,
-                    //           MaterialPageRoute(
-                    //               builder: (context) => PrivacyPolicy()),
-                    //         ),
-                    //   style: TextStyle(
-                    //       color: const Color(0xff7D2AE8),
-                    //       fontSize: 11,
-                    //       fontWeight: FontWeight.w500,
-                    //       //  decoration: TextDecoration.underline,
-                    //       fontFamily: 'Lato'),
-                    // ),
-                  ],
+                  ),
                 ),
-              ),
             ),
+
+
           ],
         ),
       ),

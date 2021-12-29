@@ -1,17 +1,26 @@
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 import 'package:atlas/otp.dart';
-import 'package:atlas/pincode.dart';
+import 'package:atlas/create_profile.dart';
 import 'package:flutter/material.dart';
 
 class Signup extends StatefulWidget {
  // const Signup({Key? key}) : super(key: key);
+
 
   @override
   _SignupState createState() => _SignupState();
 }
 
 class _SignupState extends State<Signup> {
+  var focusNode = FocusNode();
   var myTextEditingController = TextEditingController();
+
+
+  @override
+  void initState() {
+    focusNode.requestFocus();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,21 +38,43 @@ class _SignupState extends State<Signup> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 60, 0, 20),
-            child: Text(
-              'Get Started.',
-             // textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Lato'),
+            padding: EdgeInsets.fromLTRB(20, 60, 0, 20),
+            // child: Text(
+            //   'Signup',
+            //  // textAlign: TextAlign.center,
+            //   style: TextStyle(
+            //       color: Colors.white,
+            //       fontSize: 34,
+            //       fontWeight: FontWeight.bold,
+            //       fontFamily: 'Lato'),
+            // ),
+            child: RichText(
+              text: TextSpan(
+                  text:
+                  'Get started',
+                  style: TextStyle(
+                      color: const Color(0xffffffff),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Lato'),
+                  children: [
+                    // TextSpan(
+                    //   text: '.',
+                    //   style: TextStyle(
+                    //       color: const Color(0xff7D2AE8),
+                    //       fontSize: 50,
+                    //       fontWeight: FontWeight.bold,
+                    //       fontFamily: 'Lato'),
+                    // ),
+                  ],
+              ),
+
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 0, 0, 20),
+            padding: EdgeInsets.fromLTRB(20, 0, 0, 25),
             child: Text(
-              'Enter your 10 digit mobile number to signup with Localtym',
+              'Enter your 10 digit mobile number to get started with Localtym',
               style: TextStyle(
                   color: Colors.white54,
                   fontSize: 14,
@@ -54,25 +85,31 @@ class _SignupState extends State<Signup> {
                 Container(
                   height: 50,
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                     child: TextField(
     controller: myTextEditingController,
                       keyboardType: TextInputType.phone,
           style: TextStyle(color: Colors.white70, fontSize: 18),
-         // focusNode: focusNode,
+         focusNode: focusNode,
                      // enableInteractiveSelection: false,
-                      cursorHeight: 3,
+                      cursorHeight: 22,
 
                       decoration: InputDecoration(
-                        //contentPadding: EdgeInsets.symmetric(horizontal: 2.0),
+                      //  contentPadding: EdgeInsets.symmetric(vertical: 0.0),
                         isDense: true,
                         prefixText: '+91  ',
                         prefixStyle: TextStyle(color: Colors.white70, fontSize: 18),
-                        filled: true,
-                        fillColor: const Color(0x50344081),
+                        // filled: true,
+                        // fillColor: const Color(0x50344081),
                        // fillColor: const Color(0x50344081),
-                        labelText: 'Phone Number',
-                        labelStyle: TextStyle(color: Colors.white54, fontSize: 14),
+                        hintText: 'Phone Number',
+                        hintStyle: TextStyle(color: Colors.white54, fontSize: 18, height: 0),
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                        ),
                       ),
                     ),
                   ),

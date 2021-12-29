@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:atlas/pincode.dart';
+import 'package:atlas/create_profile.dart';
 import 'package:atlas/utils/connection_status.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -340,7 +340,7 @@ class _OTPState extends State<OTP> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Pincode()),
+                    MaterialPageRoute(builder: (context) => Profile()),
                   );
                 },
                 child: Text(

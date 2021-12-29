@@ -1,7 +1,7 @@
 import 'package:atlas/get_started.dart';
 import 'package:atlas/initialize.dart';
 import 'package:atlas/intro.dart';
-import 'package:atlas/pincode.dart';
+import 'package:atlas/create_profile.dart';
 import 'package:atlas/splash.dart';
 import 'package:atlas/utils/connection_status.dart';
 import 'package:atlas/utils/theme.dart';
@@ -45,7 +45,7 @@ class AtlasApp extends StatelessWidget {
         '/intro': (context) => IntroScreen(),
         '/get-started': (context) => GetStarted(),
         '/otp': (context) => OTP(),
-        '/pin-code': (context) => Pincode(),
+        '/pin-code': (context) => Profile(),
         '/home': (context) => Home(),
       },
     );

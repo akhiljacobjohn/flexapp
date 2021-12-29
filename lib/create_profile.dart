@@ -3,14 +3,14 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 import 'home.dart';
 
-class Pincode extends StatefulWidget {
+class Profile extends StatefulWidget {
  // const Pincode({Key? key}) : super(key: key);
 
   @override
-  _PincodeState createState() => _PincodeState();
+  _ProfileState createState() => _ProfileState();
 }
 
-class _PincodeState extends State<Pincode> {
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
@@ -26,13 +26,13 @@ class _PincodeState extends State<Pincode> {
 
       child: Scaffold(
           resizeToAvoidBottomInset:false,
-          backgroundColor: const Color(0xff15202f),
+          backgroundColor: const Color(0xff232A53),
           //backgroundColor: const Color(0xffffffff),
           appBar: AppBar(
             titleSpacing: -10,
-            backgroundColor: const Color(0xff15202f),
+            backgroundColor: const Color(0xff232A53),
             // backgroundColor: const Color(0xff3c4852),
-            //  elevation: 0,
+              elevation: 1,
             //  automaticallyImplyLeading: false,
             title: Text('Profile', style: TextStyle(color: const Color(0xaaffffff), fontSize: 24,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
             // centerTitle: true,
@@ -53,39 +53,45 @@ class _PincodeState extends State<Pincode> {
 //                 fontFamily: 'Lato'),
 //           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 30, 10, 10),
+            padding: EdgeInsets.fromLTRB(20, 30, 20, 10),
             child: Container(
               height: 50,
               child: TextFormField(
                 autofocus: true,
                 keyboardType: TextInputType.number,
                 //  focusNode: focusNode,
+cursorHeight: 24,
 
-                enableInteractiveSelection: false,
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                     // letterSpacing: 1,
-                    fontFamily: 'Open Sans'),
+                    fontFamily: 'Lato'),
                 decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color(0x11ffffff),
-                  alignLabelWithHint: true,
-                  hintText: "Full Name",
-                  hintStyle: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                      // letterSpacing: 1,
-                      fontFamily: 'Open Sans'),
-                  suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
-                  suffixIconConstraints: BoxConstraints(
+                  isDense: true,
 
-                      maxHeight: 30,
+                  // filled: true,
+                  // fillColor: const Color(0x50344081),
+                  // fillColor: const Color(0x50344081),
 
-                      maxWidth: 30
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
                   ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                  ),
+                  alignLabelWithHint: true,
+                  hintText: "Name",
+                  hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
+
+                  // suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
+                  // suffixIconConstraints: BoxConstraints(
+                  //
+                  //     maxHeight: 30,
+                  //
+                  //     maxWidth: 30
+                  // ),
                 ),
 
               ),
@@ -93,111 +99,131 @@ class _PincodeState extends State<Pincode> {
           ),
           //SizedBox(height: 10,),
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
             child: Container(
               height: 50,
               child: TextFormField(
                 autofocus: true,
                 keyboardType: TextInputType.number,
                 //  focusNode: focusNode,
+                cursorHeight: 24,
 
-                enableInteractiveSelection: false,
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                     // letterSpacing: 1,
-                    fontFamily: 'Open Sans'),
+                    fontFamily: 'Lato'),
                 decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color(0x11ffffff),
+                  isDense: true,
+
+                  // filled: true,
+                  // fillColor: const Color(0x50344081),
+                  // fillColor: const Color(0x50344081),
+
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                  ),
                   alignLabelWithHint: true,
                   hintText: "Password",
-                  hintStyle: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                      // letterSpacing: 1,
-                      fontFamily: 'Open Sans'),
-                  suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
-                  suffixIconConstraints: BoxConstraints(
+                  hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
 
-                      maxHeight: 30,
-
-                      maxWidth: 30
-                  ),
+                  // suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
+                  // suffixIconConstraints: BoxConstraints(
+                  //
+                  //     maxHeight: 30,
+                  //
+                  //     maxWidth: 30
+                  // ),
                 ),
 
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
             child: Container(
               height: 50,
               child: TextFormField(
                 autofocus: true,
                 keyboardType: TextInputType.number,
                 //  focusNode: focusNode,
+                cursorHeight: 24,
 
-                enableInteractiveSelection: false,
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                     // letterSpacing: 1,
-                    fontFamily: 'Open Sans'),
+                    fontFamily: 'Lato'),
                 decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color(0x11ffffff),
+                  isDense: true,
+
+                  // filled: true,
+                  // fillColor: const Color(0x50344081),
+                  // fillColor: const Color(0x50344081),
+
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                  ),
                   alignLabelWithHint: true,
                   hintText: "Re-enter Password",
-                  hintStyle: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                      // letterSpacing: 1,
-                      fontFamily: 'Open Sans'),
-                  suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
-                  suffixIconConstraints: BoxConstraints(
+                  hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
 
-                      maxHeight: 30,
-
-                      maxWidth: 30
-                  ),
+                  // suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
+                  // suffixIconConstraints: BoxConstraints(
+                  //
+                  //     maxHeight: 30,
+                  //
+                  //     maxWidth: 30
+                  // ),
                 ),
 
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 0, 10, 20),
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
             child: Container(
               height: 50,
               child: TextFormField(
                 autofocus: true,
                 keyboardType: TextInputType.number,
                 //  focusNode: focusNode,
+                cursorHeight: 24,
 
-                enableInteractiveSelection: false,
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                     // letterSpacing: 1,
-                    fontFamily: 'Open Sans'),
+                    fontFamily: 'Lato'),
                 decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color(0x11ffffff),
+                  isDense: true,
+
+                  // filled: true,
+                  // fillColor: const Color(0x50344081),
+                  // fillColor: const Color(0x50344081),
+
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                  ),
                   alignLabelWithHint: true,
-                  hintText: "Pin code",
-                  hintStyle: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                      // letterSpacing: 1,
-                      fontFamily: 'Open Sans'),
-                  suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
+                  hintText: "Pincode",
+                  hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
+
+                  suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0),
+                      //child: Image.asset('assets/images/locate.png')),
+                      child: Icon(Icons.location_history, color: Colors.white70, size: 20,)),
                   suffixIconConstraints: BoxConstraints(
 
                       maxHeight: 30,
