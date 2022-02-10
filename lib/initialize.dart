@@ -43,8 +43,8 @@ class _AppInitState extends State<AppInit> {
             //   width: 140,
             // ),
             Container(
-              width: 25,
-              height: 25,
+              width: 20,
+              height: 20,
               child: CircularProgressIndicator(
                 color: Colors.white,
                 strokeWidth: 2,

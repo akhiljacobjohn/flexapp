@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: const Color(0xff232A53),
+      backgroundColor: const Color(0xff21252B),
       appBar: AppBar(
         automaticallyImplyLeading: false,
 
@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
            ),
           ],
         ),
-        backgroundColor: const Color(0xff232A53),
+        backgroundColor: const Color(0xff21252d),
         elevation: 1,
         actions: [
            IconButton(onPressed: (){}, icon: Image.asset('assets/images/search-icon.png', width: 20,))
@@ -62,9 +62,9 @@ class _HomeState extends State<Home> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xff232A53),
+        backgroundColor: const Color(0xff21252d),
         type: BottomNavigationBarType.fixed,
-        elevation:24,
+       // elevation:24,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         currentIndex: index,
@@ -85,35 +85,35 @@ class _HomeState extends State<Home> {
           ),
           BottomNavigationBarItem(
 
-            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/directory-selected-icon.png', width: 18,),),
-            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/directory-unselected-icon.png', width: 18,),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/directory-selected-icon.png', width: 16,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/directory-unselected-icon.png', width: 16,),),
 
 
-            label: 'Directory',
+            label: 'Index',
           ),
           BottomNavigationBarItem(
 
-            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/add-post-selected-icon.png', width: 20,),),
-            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/add-post-unselected-icon.png', width: 20,),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/add-post-selected-icon.png', width: 18,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/add-post-unselected-icon.png', width: 18,),),
 
-            label: 'Add Post',
+            label: 'Post Ad',
           ),
           BottomNavigationBarItem(
 
-            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/business-profile-selected-icon.png', width: 20,),),
-            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/business-profile-unselected-icon.png', width: 20,),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/business-profile-selected-icon.png', width: 18,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5), child: Image.asset('assets/images/business-profile-unselected-icon.png', width: 18,),),
 
-            label: 'Profile',
+            label: 'My Shop',
           ),
           BottomNavigationBarItem(
-            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5),child: Image.asset('assets/images/settings-selected-icon.png', width: 22,),),
-            icon: Padding(padding: EdgeInsets.only(bottom: 5),child: Image.asset('assets/images/settings-unselected-icon.png', width: 22,),),
+            activeIcon: Padding(padding: EdgeInsets.only(bottom: 5),child: Image.asset('assets/images/settings-selected-icon.png', width: 20,),),
+            icon: Padding(padding: EdgeInsets.only(bottom: 5),child: Image.asset('assets/images/settings-unselected-icon.png', width: 20,),),
 
             label: 'Settings',
           ),
         ],
-        selectedLabelStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
-        unselectedLabelStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
+        selectedLabelStyle: TextStyle(fontSize: 10, fontWeight: FontWeight.normal),
+        unselectedLabelStyle: TextStyle(fontSize: 10, fontWeight: FontWeight.normal),
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white,
       ),

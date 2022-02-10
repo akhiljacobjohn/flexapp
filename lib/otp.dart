@@ -5,7 +5,6 @@ import 'package:atlas/utils/connection_status.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'get_started.dart';
 
 class OTP extends StatefulWidget {
   @override
@@ -28,16 +27,16 @@ class _OTPState extends State<OTP> {
 
 
         resizeToAvoidBottomInset:false,
-        backgroundColor: const Color(0xff232A53),
+        backgroundColor: const Color(0xff21252d),
         //backgroundColor: const Color(0xffffffff),
         appBar: AppBar(
           titleSpacing: -10,
-          backgroundColor: const Color(0xff232A53),
+          backgroundColor: const Color(0xff21252d),
           // backgroundColor: const Color(0xff3c4852),
-        //  elevation: 0,
-        //  automaticallyImplyLeading: false,
-           title: Text('OTP', style: TextStyle(color: const Color(0xaaffffff), fontSize: 24,  fontFamily: 'Helvetica', fontWeight: FontWeight.w600),),
-         // centerTitle: true,
+          elevation: 1,
+          //  automaticallyImplyLeading: false,
+          title: Text('OTP', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
+          // centerTitle: true,
         ),
         body: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
@@ -69,44 +68,45 @@ class _OTPState extends State<OTP> {
               verticalDirection: VerticalDirection.down,
               children: [
                 Container(
-                  width: 45,
-                  height: 50,
-
-                  child: TextFormField(
-
-                    textInputAction: TextInputAction.next,
-                    onChanged: (_) => FocusScope.of(context).nextFocus(),
-                    textAlign: TextAlign.center,
-                    maxLength: 1,
-                    showCursor: false,
-                    enableInteractiveSelection: false,
-                    style: TextStyle(
-                        color: Colors.white70,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                        // letterSpacing: 1,
-                        fontFamily: 'Lato'),
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: const Color(0x50344081),
-                      hintText: "*",
-                      hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ),alignLabelWithHint: true,
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                      counterText: "",
-
-                    ),  autofocus: true,
-                    focusNode: focusNode,),
+                    width: 45,
+                    height: 50,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
+                   // //borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       width: 0.5,
-                      color: const Color(0xff7d2ae8),
+                      color: Colors.white10,
                     ),
                   ),
+                    child: TextFormField(maxLength: 1, textAlign: TextAlign.center,
+                      textInputAction: TextInputAction.next,
+                      onChanged: (_) => FocusScope.of(context).nextFocus(),
+                      showCursor: false,
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          // letterSpacing: 1,
+                          fontFamily: 'Lato'),
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: const Color(0xff21252d),
+                        hintText: "*",
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color: Colors.white70),
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        counterText: "",
+
+                      ),),
+                    // decoration: BoxDecoration(
+                    //   //borderRadius: BorderRadius.circular(5),
+                    //   border: Border.all(
+                    //     width: 0.5,
+                    //     color: const Color(0xff7d2ae8),
+                    //   ),
+                    // ),
                 ),
                 SizedBox(
                   width: 10,
@@ -127,9 +127,9 @@ class _OTPState extends State<OTP> {
                           fontFamily: 'Lato'),
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: const Color(0x50344081),
+                        fillColor: const Color(0xff21252d),
                         hintText: "*",
-                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ),alignLabelWithHint: true,
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color: Colors.white70),
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         enabledBorder: InputBorder.none,
@@ -139,10 +139,47 @@ class _OTPState extends State<OTP> {
 
                       ),),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      //borderRadius: BorderRadius.circular(5),
                       border: Border.all(
                         width: 0.5,
-                        color: const Color(0xff7d2ae8),
+                        color: Colors.white10,
+                      ),
+                    )),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                    width: 45,
+                    height: 50,
+
+                    child: TextFormField(maxLength: 1, textAlign: TextAlign.center,
+                      textInputAction: TextInputAction.next,
+                      onChanged: (_) => FocusScope.of(context).nextFocus(),
+                      showCursor: false,
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          // letterSpacing: 1,
+                          fontFamily: 'Lato'),
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: const Color(0xff21252d),
+                        hintText: "*",
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color: Colors.white70),
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        counterText: "",
+
+                      ),),
+                    decoration: BoxDecoration(
+                      //borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                        width: 0.5,
+                        color: Colors.white10,
                       ),
                     )),
                 SizedBox(
@@ -163,9 +200,9 @@ class _OTPState extends State<OTP> {
                           fontFamily: 'Lato'),
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: const Color(0x50344081),
+                        fillColor: const Color(0xff21252d),
                         hintText: "*",
-                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ),alignLabelWithHint: true,
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color: Colors.white70),
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         enabledBorder: InputBorder.none,
@@ -175,10 +212,10 @@ class _OTPState extends State<OTP> {
 
                       ),),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      //borderRadius: BorderRadius.circular(5),
                       border: Border.all(
                         width: 0.5,
-                        color: const Color(0xff7d2ae8),
+                        color: Colors.white10,
                       ),
                     )),
                 SizedBox(
@@ -199,45 +236,9 @@ class _OTPState extends State<OTP> {
                           fontFamily: 'Lato'),
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: const Color(0x50344081),
+                        fillColor: const Color(0xff21252d),
                         hintText: "*",
-                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ), alignLabelWithHint: true,
-                        border: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-                        counterText: "",
-
-                      ),),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                        width: 0.5,
-                        color: const Color(0xff7d2ae8),
-                      ),
-                    )),
-                SizedBox(
-                  width: 10,
-                ),
-                Container(
-                    width: 45,
-                    height: 50,
-
-                    child: TextFormField(maxLength: 1, textAlign: TextAlign.center,    showCursor: false,
-                      textInputAction: TextInputAction.next,
-                      onChanged: (_) => FocusScope.of(context).nextFocus(),
-                      style: TextStyle(
-                          color: Colors.white70,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                          // letterSpacing: 1,
-                          fontFamily: 'Lato'),
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: const Color(0x50344081),
-                        hintText: "*",
-                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ),
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color: Colors.white70),
                         alignLabelWithHint: true,
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
@@ -248,10 +249,10 @@ class _OTPState extends State<OTP> {
 
                       ),),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      //borderRadius: BorderRadius.circular(5),
                       border: Border.all(
                         width: 0.5,
-                        color: const Color(0xff7d2ae8),
+                        color: Colors.white10,
                       ),
                     )),
                 SizedBox(
@@ -272,9 +273,9 @@ class _OTPState extends State<OTP> {
                           fontFamily: 'Lato'),
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: const Color(0x50344081),
+                        fillColor: const Color(0xff21252d),
                         hintText: "*",
-                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color:  Colors.white24 ),
+                        hintStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color: Colors.white70),
                         alignLabelWithHint: true,
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
@@ -285,10 +286,10 @@ class _OTPState extends State<OTP> {
 
                       ),),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      //borderRadius: BorderRadius.circular(5),
                       border: Border.all(
                         width: 0.5,
-                        color: const Color(0xff7d2ae8),
+                        color: Colors.white10,
                       ),
                     )),
               ],
@@ -310,7 +311,7 @@ class _OTPState extends State<OTP> {
                   TextSpan(
                       text: ' Resend',
                       style: TextStyle(
-                          color: const Color(0xffffffff),
+                          color: const Color(0xddffffff),
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Lato'),
@@ -333,7 +334,8 @@ class _OTPState extends State<OTP> {
               padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: const Color(0xff7D2AE8),
+                  primary: const Color(0xff057855),
+                 // primary: const Color(0xff7D2AE8),
                   onPrimary: Colors.white,
                   // foreground
                 ),

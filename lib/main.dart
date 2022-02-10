@@ -1,7 +1,8 @@
-import 'package:atlas/get_started.dart';
+
 import 'package:atlas/initialize.dart';
 import 'package:atlas/intro.dart';
 import 'package:atlas/create_profile.dart';
+import 'package:atlas/signup.dart';
 import 'package:atlas/splash.dart';
 import 'package:atlas/utils/connection_status.dart';
 import 'package:atlas/utils/theme.dart';
@@ -43,7 +44,7 @@ class AtlasApp extends StatelessWidget {
         '/': (context) => SplashScreen(),
         '/app-init': (context) => AppInit(),
         '/intro': (context) => IntroScreen(),
-        '/get-started': (context) => GetStarted(),
+        '/get-started': (context) => Signup(),
         '/otp': (context) => OTP(),
         '/pin-code': (context) => Profile(),
         '/home': (context) => Home(),

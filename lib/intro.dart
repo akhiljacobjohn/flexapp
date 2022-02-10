@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'get_started.dart';
+
 import 'otp.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -31,8 +31,8 @@ class _IntroScreenState extends State<IntroScreen> {
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor: const Color(0xff131317),
-      statusBarColor: const Color(0xff14203c),
+      systemNavigationBarColor: const Color(0xff21252d),
+      statusBarColor: const Color(0xff21252d),
     ));
     focusNode.requestFocus();
   }
@@ -46,134 +46,78 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor:const Color(0xff212128),
+      // ),
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xff232A53),
+      backgroundColor: const Color(0xff21252d),
+      //backgroundColor: const Color(0xff232A53),
       //backgroundColor: const Color(0xffffffff),
-      appBar: AppBar(
-        titleSpacing: -10,
-        backgroundColor: const Color(0xff232A53),
-        elevation: 0,
-        automaticallyImplyLeading: false,
-      ),
-      body: Container(
-        //  decoration: BoxDecoration(
-        //  image: DecorationImage(
-        // image: AssetImage("assets/images/night_sky1.png"),
-        // fit: BoxFit.cover,
-        // ),
-        //   ),
+
+      body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-                child: SizedBox(
-              height: 0,
-            )),
-            Container(
-              // color: Colors.white70,
-              child: Center(
-                child: Image.asset(
-                  'assets/images/local.png',
-                  width: 300,
-                  // height: 250,
-                ),
+           // Expanded(
+           //   child:  Image.asset(
+           //     'assets/images/local3.png',
+           //      width: 320,
+           //     // height: 250,
+           //   ),
+           // ),
+            Image.asset(
+              'assets/images/local4.png',
+              width: 400,
+            ),
+            SizedBox(
+              height: 50,
+            ),
+
+            Padding(
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 20),
+              child: Text(
+                'Welcome to Atlas',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Lato'),
               ),
             ),
-            // Padding(
-            //   padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-            //   child: Center(
-            //   child: Image.asset(
-            //   'assets/images/local.png',
-            //     width: 300,
-            //    // height: 250,
-            //   ),
-            //   ),
-            // ),
-            //     Padding(
-            //       padding: EdgeInsets.fromLTRB(10, 20, 0, 20),
-            //       child: Text(
-            //         'Hi,',
-            //         textAlign: TextAlign.center,
-            //         style: TextStyle(
-            //             color: Colors.white,
-            //             fontSize: 26,
-            //             fontWeight: FontWeight.bold,
-            //             fontFamily: 'Lato'),
-            //       ),
-            //     ),
-            // Expanded(child: SizedBox(height: 1,)),
-            // Padding(
-            //   padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-            //   child: Text(
-            //     'Welcome To Localtym',
-            //     textAlign: TextAlign.center,
-            //     style: TextStyle(
-            //         color: Colors.white,
-            //         fontSize: 20,
-            //         fontWeight: FontWeight.bold,
-            //         fontFamily: 'Lato'),
-            //   ),
-            // ),
-            //
-            // Padding(
-            //   padding: EdgeInsets.fromLTRB(10, 15, 0, 30),
-            //   child: Text(
-            //     'Discover what\'s new in your local area',
-            //     textAlign: TextAlign.center,
-            //     style: TextStyle(
-            //         color: Colors.white70,
-            //         fontSize: 16,
-            //         fontWeight: FontWeight.w500,
-            //         fontFamily: 'Lato'),
-            //   ),
-            // ),
-            // Padding(
-            //   padding: EdgeInsets.fromLTRB(10, 0, 0, 20),
-            //   child: Text(
-            //     ' Enter your mobile number to get started',
-            //     style: TextStyle(
-            //         color: Colors.white54,
-            //         fontSize: 16,
-            //         fontWeight: FontWeight.w500,
-            //         fontFamily: 'Lato'),
-            //   ),
-            // ),
-            //Expanded(child: SizedBox(height: 1,)),
-            //SizedBox(height: 100,),
-            //       Container(
-            //         height: 50,
-            //         child: Padding(
-            //           padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-            //           child: TextField(
-            // style: TextStyle(color: Colors.white70, fontSize: 20),
-            // focusNode: focusNode,
-            //             decoration: InputDecoration(
-            //               prefixText: '+91  ',
-            //               prefixStyle: TextStyle(color: Colors.white70, fontSize: 20),
-            //               filled: true,
-            //               fillColor: const Color(0xff1f2e45),
-            //              // fillColor: const Color(0x50344081),
-            //               labelText: 'Phone Number',
-            //               labelStyle: TextStyle(color: Colors.white54),
-            //             ),
-            //           ),
-            //         ),
-            //       ),
-            Expanded(
-                child: SizedBox(
-              height: 0,
-            )),
+
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+              child: Text(
+                'Discover what\'s trending in your local area',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.white54,
+                    fontSize: 18,
+                    fontStyle: FontStyle.italic,
+                    fontFamily: 'Lato'),
+              ),
+            ),
+
+            SizedBox(
+              height: 40,
+            ),
             Container(
               width: double.infinity,
               height: 65,
               //   color: const Color(0xffe9eff3),
-              padding: EdgeInsets.fromLTRB(15, 0, 15, 20),
+              padding: EdgeInsets.fromLTRB(45, 0, 45, 20),
               child: ElevatedButton(
+
                 style: ElevatedButton.styleFrom(
-                  primary: const Color(0xff7D2AE8),
+                  primary: const Color(0xff057855),
                   //primary: const Color(0xff7D2AE8),
                   onPrimary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(60)),
+
                   // foreground
                 ),
                 onPressed: () {
@@ -184,93 +128,84 @@ class _IntroScreenState extends State<IntroScreen> {
                     MaterialPageRoute(builder: (context) => Signup()),
                   );
                 },
+
                 child: Text(
                   'GET STARTED',
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 15,
                       color: const Color(0xfffdfdfd),
                       fontFamily: 'Helvetica',
                       fontWeight: FontWeight.normal),
                 ),
               ),
             ),
-            // Padding(
-            //   padding: EdgeInsets.fromLTRB(10, 0, 10, 20),
-            //   child: Text(
-            //     'By continuing, you indicate that you have read and agree to our Terms of Service and Privacy Policy.',
-            //     textAlign: TextAlign.center,
-            //     style: TextStyle(
-            //         color: Colors.white70,
-            //         fontSize: 12,
-            //         fontWeight: FontWeight.w500,
-            //         fontFamily: 'Lato'),
-            //   ),
-            // ),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 40),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Login()),
-                    );
-                  },
 
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      text:
-                      'Have an account already? ',
-                      style: TextStyle(
-                          height: 1.5,
-                          color: Colors.white70,
-                          fontSize: 11,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Lato'),
-                      children: [
-                        TextSpan(
-                          text: 'Login',
-                          style: TextStyle(
-                              color: const Color(0xffffffff),
-                              fontSize: 11,
-                              fontWeight: FontWeight.w500,
-                              // decoration: TextDecoration.underline,
-                              fontFamily: 'Lato'),
-                        ),
-                        // TextSpan(
-                        //   text: ' and ',
-                        //   style: TextStyle(
-                        //       color: Colors.white70,
-                        //       fontSize: 11,
-                        //       fontWeight: FontWeight.w500,
-                        //       fontFamily: 'Lato'),
-                        // ),
-                        // TextSpan(
-                        //   text: 'Privacy Policy.',
-                        //   recognizer: new TapGestureRecognizer()
-                        //     ..onTap = () => Navigator.push(
-                        //           context,
-                        //           MaterialPageRoute(
-                        //               builder: (context) => PrivacyPolicy()),
-                        //         ),
-                        //   style: TextStyle(
-                        //       color: const Color(0xff7D2AE8),
-                        //       fontSize: 11,
-                        //       fontWeight: FontWeight.w500,
-                        //       //  decoration: TextDecoration.underline,
-                        //       fontFamily: 'Lato'),
-                        // ),
-                      ],
-                    ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 30),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Login()),
+                  );
+                },
+
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    text:
+                    'Have an account already? ',
+                    style: TextStyle(
+                        height: 1.5,
+                        color: Colors.white70,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Lato'),
+                    children: [
+                      TextSpan(
+                        text: 'Login',
+                        style: TextStyle(
+                            color: const Color(0xffffffff),
+                            fontSize: 11,
+                            fontWeight: FontWeight.w500,
+                            // decoration: TextDecoration.underline,
+                            fontFamily: 'Lato'),
+                      ),
+                      // TextSpan(
+                      //   text: ' and ',
+                      //   style: TextStyle(
+                      //       color: Colors.white70,
+                      //       fontSize: 11,
+                      //       fontWeight: FontWeight.w500,
+                      //       fontFamily: 'Lato'),
+                      // ),
+                      // TextSpan(
+                      //   text: 'Privacy Policy.',
+                      //   recognizer: new TapGestureRecognizer()
+                      //     ..onTap = () => Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (context) => PrivacyPolicy()),
+                      //         ),
+                      //   style: TextStyle(
+                      //       color: const Color(0xff7D2AE8),
+                      //       fontSize: 11,
+                      //       fontWeight: FontWeight.w500,
+                      //       //  decoration: TextDecoration.underline,
+                      //       fontFamily: 'Lato'),
+                      // ),
+                    ],
                   ),
                 ),
+              ),
             ),
 
 
           ],
         ),
-      ),
+      )
+
       //   body: Column(
       //     crossAxisAlignment: CrossAxisAlignment.center,
       //     mainAxisAlignment: MainAxisAlignment.start,

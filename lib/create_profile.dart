@@ -26,15 +26,15 @@ class _ProfileState extends State<Profile> {
 
       child: Scaffold(
           resizeToAvoidBottomInset:false,
-          backgroundColor: const Color(0xff232A53),
+          backgroundColor: const Color(0xff21252d),
           //backgroundColor: const Color(0xffffffff),
           appBar: AppBar(
             titleSpacing: -10,
-            backgroundColor: const Color(0xff232A53),
+            backgroundColor: const Color(0xff21252d),
             // backgroundColor: const Color(0xff3c4852),
               elevation: 1,
             //  automaticallyImplyLeading: false,
-            title: Text('Create Profile', style: TextStyle(color: const Color(0xaaffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
+            title: Text('Profile', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
             // centerTitle: true,
           ),
       body: Column(
@@ -53,12 +53,12 @@ class _ProfileState extends State<Profile> {
 //                 fontFamily: 'Lato'),
 //           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(20, 30, 20, 10),
+            padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
             child: Container(
               height: 50,
               child: TextFormField(
                 autofocus: true,
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.name,
                 //  focusNode: focusNode,
 cursorHeight: 24,
 
@@ -76,10 +76,10 @@ cursorHeight: 24,
                   // fillColor: const Color(0x50344081),
 
                   enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                    borderSide: BorderSide(color: Colors.white10,),
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                    borderSide: BorderSide(color: Colors.white10,),
                   ),
                   alignLabelWithHint: true,
                   hintText: "Name",
@@ -104,7 +104,8 @@ cursorHeight: 24,
               height: 50,
               child: TextFormField(
                 autofocus: true,
-                keyboardType: TextInputType.number,
+                obscureText: true,
+                keyboardType: TextInputType.visiblePassword,
                 //  focusNode: focusNode,
                 cursorHeight: 24,
 
@@ -122,10 +123,10 @@ cursorHeight: 24,
                   // fillColor: const Color(0x50344081),
 
                   enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                    borderSide: BorderSide(color: Colors.white10,),
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                    borderSide: BorderSide(color: Colors.white10,),
                   ),
                   alignLabelWithHint: true,
                   hintText: "Password",
@@ -148,12 +149,14 @@ cursorHeight: 24,
             child: Container(
               height: 50,
               child: TextFormField(
+                obscureText: true,
                 autofocus: true,
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.visiblePassword,
                 //  focusNode: focusNode,
                 cursorHeight: 24,
 
                 style: TextStyle(
+
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
@@ -167,12 +170,13 @@ cursorHeight: 24,
                   // fillColor: const Color(0x50344081),
 
                   enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                    borderSide: BorderSide(color: Colors.white10,),
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                    borderSide: BorderSide(color: Colors.white10,),
                   ),
                   alignLabelWithHint: true,
+
                   hintText: "Re-enter Password",
                   hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
 
@@ -194,7 +198,7 @@ cursorHeight: 24,
               height: 50,
               child: TextFormField(
                 autofocus: true,
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.emailAddress,
                 //  focusNode: focusNode,
                 cursorHeight: 24,
 
@@ -212,18 +216,18 @@ cursorHeight: 24,
                   // fillColor: const Color(0x50344081),
 
                   enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                    borderSide: BorderSide(color: Colors.white10,),
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: const Color(0xff7D2AE8),),
+                    borderSide: BorderSide(color: Colors.white10,),
                   ),
                   alignLabelWithHint: true,
-                  hintText: "Pincode",
+                  hintText: "Email",
                   hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
 
                   suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0),
                       //child: Image.asset('assets/images/locate.png')),
-                      child: Icon(Icons.location_searching, color: Colors.white70, size: 18,)),
+                      child: Icon(Icons.location_searching, color: Color(0x00ffffff), size: 18,)),
                   suffixIconConstraints: BoxConstraints(
 
                       maxHeight: 30,
@@ -255,7 +259,7 @@ cursorHeight: 24,
       padding: EdgeInsets.fromLTRB(20, 25, 20, 25),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: const Color(0xff7d2ae8),
+          primary: const Color(0xff057855),
           onPrimary: Colors.white,
           // foreground
         ),
