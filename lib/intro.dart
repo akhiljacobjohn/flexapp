@@ -102,7 +102,7 @@ class _IntroScreenState extends State<IntroScreen> {
             Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
               child: Text(
-                'Discover local businesses in your area, instantly.',
+                'Discover local businesses around you, instantly.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white54,
