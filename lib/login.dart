@@ -1,3 +1,4 @@
+import 'package:atlas/forgot_passed.dart';
 import 'package:atlas/home.dart';
 import 'package:flutter/material.dart';
 class Login extends StatefulWidget {
@@ -8,6 +9,13 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  var focusNode = FocusNode();
+  @override
+  void initState() {
+    super.initState();
+    focusNode.requestFocus();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,24 +27,39 @@ class _LoginState extends State<Login> {
         backgroundColor: const Color(0xff21252d),
         // backgroundColor: const Color(0xff3c4852),
         elevation: 1,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            setState(() {
+              Navigator.pop(context);
+            });
+          },
+        ),
         //  automaticallyImplyLeading: false,
-        title: Text('Log in', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
+       // title: Text('Log in', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
         // centerTitle: true,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
+            child:  Text('Log in', style: TextStyle(color: const Color(0xddffffff), fontSize: 24,  fontFamily: 'Lato', fontWeight: FontWeight.bold),),
+          ),
+
           SizedBox(height: 20,),
           Container(
             height: 50,
             child: Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
               child: TextField(
                // controller: myTextEditingController,
-                keyboardType: TextInputType.phone,
+               // keyboardType: TextInputType.phone,
                 style: TextStyle(color: Colors.white70, fontSize: 14),
-                // focusNode: focusNode,
+                 focusNode: focusNode,
                 // enableInteractiveSelection: false,
-                cursorHeight: 24,
+                cursorHeight: 20,
 
                 decoration: InputDecoration(
                   //contentPadding: EdgeInsets.symmetric(horizontal: 2.0),
@@ -52,8 +75,8 @@ class _LoginState extends State<Login> {
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.white10,),
                   ),
-                  labelText: 'Email/Username/Phone number',
-                  labelStyle: TextStyle(color: Colors.white54, fontSize: 14, height: 0),
+                  labelText: 'Email, Username or Mobile Number*',
+                  labelStyle: TextStyle(color: Colors.white54, fontSize: 14, height: 0.5),
                 ),
               ),
             ),
@@ -62,22 +85,25 @@ class _LoginState extends State<Login> {
           Container(
             height: 50,
             child: Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
               child: TextField(
                // controller: myTextEditingController,
-                keyboardType: TextInputType.phone,
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
                 style: TextStyle(color: Colors.white70, fontSize: 14),
                 // focusNode: focusNode,
                 // enableInteractiveSelection: false,
-                cursorHeight: 24,
+                cursorHeight: 20,
+maxLength: 16,
 
-                decoration: InputDecoration(
+                decoration: InputDecoration(counterText: "",
                   //contentPadding: EdgeInsets.symmetric(horizontal: 2.0),
                   isDense: true,
                   // filled: true,
                   // fillColor: const Color(0x50344081),
                   // fillColor: const Color(0x50344081),
-                  labelText: 'Password',
+                  labelText: 'Password*',
+                  labelStyle: TextStyle(color: Colors.white54, fontSize: 14, height: 0.5),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.white10,),
                   ),
@@ -89,15 +115,26 @@ class _LoginState extends State<Login> {
               ),
             ),
           ),
+          SizedBox(height: 20,),
+          InkWell(
+            child: Padding(padding: EdgeInsets.fromLTRB(15, 0, 15, 0) ,child: Text('Forgot Password?')),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ForgotPasswd()),
+              );
+            },
+          )
         ],
       ),
 
         bottomNavigationBar: Transform.translate(
           offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
           child: Container(
-              height: 90,
+              height: 100,
               //   color: const Color(0xffe9eff3),
-              padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+              padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: const Color(0xff057855),

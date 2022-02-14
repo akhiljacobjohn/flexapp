@@ -1,3 +1,4 @@
+import 'package:atlas/base_location.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -31,6 +32,14 @@ class _ProfileState extends State<Profile> {
           appBar: AppBar(
             titleSpacing: -10,
             backgroundColor: const Color(0xff21252d),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                setState(() {
+                  Navigator.pop(context);
+                });
+              },
+            ),
             // backgroundColor: const Color(0xff3c4852),
               elevation: 1,
             //  automaticallyImplyLeading: false,
@@ -63,9 +72,9 @@ class _ProfileState extends State<Profile> {
 cursorHeight: 24,
 
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.white70,
                     fontWeight: FontWeight.w500,
-                    fontSize: 20,
+                    fontSize: 18,
                     // letterSpacing: 1,
                     fontFamily: 'Lato'),
                 decoration: InputDecoration(
@@ -110,9 +119,9 @@ cursorHeight: 24,
                 cursorHeight: 24,
 
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.white70,
                     fontWeight: FontWeight.w500,
-                    fontSize: 20,
+                    fontSize: 18,
                     // letterSpacing: 1,
                     fontFamily: 'Lato'),
                 decoration: InputDecoration(
@@ -157,9 +166,9 @@ cursorHeight: 24,
 
                 style: TextStyle(
 
-                    color: Colors.white,
+                    color: Colors.white70,
                     fontWeight: FontWeight.w500,
-                    fontSize: 20,
+                    fontSize: 18,
                     // letterSpacing: 1,
                     fontFamily: 'Lato'),
                 decoration: InputDecoration(
@@ -203,9 +212,9 @@ cursorHeight: 24,
                 cursorHeight: 24,
 
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.white70,
                     fontWeight: FontWeight.w500,
-                    fontSize: 20,
+                    fontSize: 18,
                     // letterSpacing: 1,
                     fontFamily: 'Lato'),
                 decoration: InputDecoration(
@@ -225,15 +234,7 @@ cursorHeight: 24,
                   hintText: "Email",
                   hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
 
-                  suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0),
-                      //child: Image.asset('assets/images/locate.png')),
-                      child: Icon(Icons.location_searching, color: Color(0x00ffffff), size: 18,)),
-                  suffixIconConstraints: BoxConstraints(
 
-                      maxHeight: 30,
-
-                      maxWidth: 30
-                  ),
                 ),
 
               ),
@@ -254,9 +255,9 @@ cursorHeight: 24,
     bottomNavigationBar: Transform.translate(
     offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
     child: Container(
-      height: 90,
+      height: 100,
       width: double.infinity,
-      padding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+      padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           primary: const Color(0xff057855),
@@ -266,7 +267,7 @@ cursorHeight: 24,
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Home()),
+            MaterialPageRoute(builder: (context) => BaseLocaltionSetter()),
           );
         },
         child: Text(

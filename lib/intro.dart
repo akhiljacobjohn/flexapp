@@ -46,10 +46,10 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   backgroundColor:const Color(0xff212128),
-      // ),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor:const Color(0xff21252d),
+      ),
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xff21252d),
       //backgroundColor: const Color(0xff232A53),
@@ -67,18 +67,29 @@ class _IntroScreenState extends State<IntroScreen> {
            //     // height: 250,
            //   ),
            // ),
-            Image.asset(
-              'assets/images/local4.png',
-              width: 400,
+            Container(
+             // color: Colors.white70,
+              width: double.infinity,
+              height: 300,
+              child: Image.asset(
+                'assets/images/local4.png',
+              //  width: 300,
+              ),
             ),
-            SizedBox(
-              height: 50,
+            // Expanded(
+            //   child: SizedBox(
+            //     height: 0,
+            //   ),
+            // ),
+
+        SizedBox(
+              height: 40,
             ),
 
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 20),
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 25),
               child: Text(
-                'Welcome to Atlas',
+                'Welcome to Billboard',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white,
@@ -91,7 +102,7 @@ class _IntroScreenState extends State<IntroScreen> {
             Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
               child: Text(
-                'Discover what\'s trending in your local area',
+                'Discover local businesses in your area, instantly.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white54,

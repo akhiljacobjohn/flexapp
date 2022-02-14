@@ -5,13 +5,13 @@ class AtlasAppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       brightness: Brightness.dark,
-      primaryColor: const Color(0xff7d2ae8),
+      canvasColor: const Color(0xff21252f),
+      primaryColor: const Color(0xff21252f),
       accentColor: const Color(0xff7d2ae8),
       scaffoldBackgroundColor: const Color(0xff232A53),
       textSelectionTheme: TextSelectionThemeData(
         cursorColor: const Color(0xff7d2ae8),
         selectionHandleColor: const Color(0xff7d2ae8),
-
 
       ),
 

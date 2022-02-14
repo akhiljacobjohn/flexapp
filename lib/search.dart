@@ -1,25 +1,23 @@
-
 import 'package:flutter/material.dart';
 
-class TermsOfService extends StatefulWidget {
-  // const TermsOfService({Key? key}) : super(key: key);
+class Search extends StatefulWidget {
+ // const Search({Key? key}) : super(key: key);
 
   @override
-  _TermsOfServiceState createState() => _TermsOfServiceState();
+  _SearchState createState() => _SearchState();
 }
 
-class _TermsOfServiceState extends State<TermsOfService> {
+class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xff21252d),
-      // backgroundColor: const Color(0xff21252d),
       //backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
         titleSpacing: -10,
         backgroundColor: const Color(0xff21252d),
-        title: Text('Terms of service', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato',),),
+        // backgroundColor: const Color(0xff3c4852),
         elevation: 1,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
@@ -30,7 +28,7 @@ class _TermsOfServiceState extends State<TermsOfService> {
           },
         ),
         //  automaticallyImplyLeading: false,
-        //  title: Text('Get Started', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato',),),
+         title: Text('Search', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
         // centerTitle: true,
       ),
     );

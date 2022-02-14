@@ -2,6 +2,7 @@ import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 import 'package:atlas/otp.dart';
 import 'package:atlas/create_profile.dart';
 import 'package:atlas/privacy_policy.dart';
+import 'package:atlas/terms_of_service.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +18,9 @@ class _SignupState extends State<Signup> {
   var focusNode = FocusNode();
   var myTextEditingController = TextEditingController();
 
-
   @override
   void initState() {
+    super.initState();
     focusNode.requestFocus();
   }
 
@@ -28,14 +29,23 @@ class _SignupState extends State<Signup> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xff21252d),
+     // backgroundColor: const Color(0xff21252d),
       //backgroundColor: const Color(0xffffffff),
         appBar: AppBar(
           titleSpacing: -10,
           backgroundColor: const Color(0xff21252d),
           // backgroundColor: const Color(0xff3c4852),
           elevation: 1,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              setState(() {
+                Navigator.pop(context);
+              });
+            },
+          ),
           //  automaticallyImplyLeading: false,
-          title: Text('Sign up', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
+          //  title: Text('Get Started', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato',),),
           // centerTitle: true,
         ),
       body: Column(
@@ -43,16 +53,12 @@ class _SignupState extends State<Signup> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Padding(
-          //   padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
-          //   // child: Text(
-          //   //   'Signup',
-          //   //  // textAlign: TextAlign.center,
-          //   //   style: TextStyle(
-          //   //       color: Colors.white,
-          //   //       fontSize: 34,
-          //   //       fontWeight: FontWeight.bold,
-          //   //       fontFamily: 'Lato'),
-          //   // ),
+          //     padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
+          //     child: Text('Get Started', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato'),)),
+          Padding(
+           padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
+            child:  Text('Get Started', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato',),),
+          ),
           //   child: RichText(
           //     text: TextSpan(
           //         text:
@@ -76,39 +82,104 @@ class _SignupState extends State<Signup> {
           //
           //   ),
           // ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(20, 30, 0, 25),
-            child: Text(
-              'Enter your 10 digit mobile number to get started with Sparkle',
-              style: TextStyle(
-                  color: Colors.white54,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'Lato'),
+          // Padding(
+          //   padding: EdgeInsets.fromLTRB(20, 30, 0, 25),
+          //   child: Text(
+          //     'Enter your 10 digit mobile number to get started with Sparkle',
+          //     style: TextStyle(
+          //         color: Colors.white54,
+          //         fontSize: 14,
+          //         fontWeight: FontWeight.w500,
+          //         fontFamily: 'Lato'),
+          //   ),
+          // ),
+          SizedBox(height: 10,),
+          Container(
+            //height: 50,
+
+            padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+            child: DropdownButton<String>(
+              elevation: 1,
+              itemHeight: null,
+             isExpanded:true,
+              underline: Container(color:Colors.white10, height:1),
+              iconEnabledColor: const Color(0xff7D2AE8),
+              hint: new Text("🇮🇳  India (+91)"),
+              items: <String>['🇮🇳  India (+91)'].map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (_) {},
             ),
           ),
+
+
+          // Container(
+          //   height: 50,
+          //   child: Padding(
+          //     padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+          //     child: TextField(
+          //
+          //       controller: myTextEditingController,
+          //       keyboardType: TextInputType.phone,
+          //
+          //       style: TextStyle(color: Colors.white70, fontSize: 18),
+          //       // focusNode: focusNode,
+          //       // enableInteractiveSelection: false,
+          //       cursorHeight: 20,
+          //
+          //       decoration: InputDecoration(
+          //         suffixIcon: Icon(Icons.keyboard_arrow_down),
+          //         //  contentPadding: EdgeInsets.symmetric(vertical: 0.0),
+          //         isDense: true,
+          //         // prefixText: '+91  ',
+          //         // prefixStyle: TextStyle(color: Colors.white70, fontSize: 18),
+          //         // filled: true,
+          //         // fillColor: const Color(0x50344081),
+          //         // fillColor: const Color(0x50344081),
+          //         //  hintText: 'Mobile Number',
+          //         //  hintStyle: TextStyle(color: Colors.white54, fontSize: 18, height: 0),
+          //         labelText: 'Country',
+          //
+          //         labelStyle: TextStyle(color: Colors.white54, fontSize: 11, height: 0),
+          //         enabledBorder: UnderlineInputBorder(
+          //           borderSide: BorderSide(color: Colors.white10,),
+          //         ),
+          //         focusedBorder: UnderlineInputBorder(
+          //           borderSide: BorderSide(color: Colors.white10,),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          SizedBox(height: 20,),
                 Container(
                   height: 50,
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                    padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                     child: TextField(
     controller: myTextEditingController,
                       keyboardType: TextInputType.phone,
-          style: TextStyle(color: Colors.white70, fontSize: 20),
+          style: TextStyle(color: Colors.white70, fontSize: 18),
          focusNode: focusNode,
                      // enableInteractiveSelection: false,
-                      cursorHeight: 22,
-
+                      cursorHeight: 20,
+maxLength: 10,
                       decoration: InputDecoration(
+counterText: "",
                       //  contentPadding: EdgeInsets.symmetric(vertical: 0.0),
                         isDense: true,
-                        prefixText: '+91  ',
-                        prefixStyle: TextStyle(color: Colors.white70, fontSize: 20),
+                        // prefixText: '+91  ',
+                        // prefixStyle: TextStyle(color: Colors.white70, fontSize: 18),
                         // filled: true,
                         // fillColor: const Color(0x50344081),
                        // fillColor: const Color(0x50344081),
-                        hintText: 'Phone Number',
-                        hintStyle: TextStyle(color: Colors.white54, fontSize: 20, height: 0),
+                       //  hintText: 'Mobile Number',
+                       //  hintStyle: TextStyle(color: Colors.white54, fontSize: 18, height: 0),
+                        labelText: 'Mobile Number',
+                        labelStyle: TextStyle(color: Colors.white54, fontSize: 14, height: 0),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.white10,),
                         ),
@@ -119,29 +190,41 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                 ),
-         SizedBox(height: 30,),
-    Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      Text('By continuing, you indicate that you have read and understood Sparkle\'s',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            height: 1.5,
-            color: Colors.white70,
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
-            fontFamily: 'Lato'),),
-    ],
-    ),
-          SizedBox(height: 5,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-           children: [
-             RichText(
-               textAlign: TextAlign.center,
+
+    // Row(
+    //   mainAxisAlignment: MainAxisAlignment.start,
+    // children: [
+    //   // Padding(
+    //   //   padding: EdgeInsets.fromLTRB(15, 20, 0, 5),
+    //   //   child: Text('By continuing, you indicate that you have read and understood Billboard\'s',
+    //   //     textAlign: TextAlign.center,
+    //   //     style: TextStyle(
+    //   //         height: 1.5,
+    //   //         color: Colors.white70,
+    //   //         fontSize: 12,
+    //   //         fontWeight: FontWeight.w500,
+    //   //         fontFamily: 'Lato'),),
+    //   // ),
+    // ],
+    // ),
+
+          Expanded(
+
+             child: Padding(
+               padding: EdgeInsets.fromLTRB(15, 20, 15, 5),
+             child:RichText(
+               textAlign: TextAlign.start,
                text: TextSpan(
                  text:
-                 '',
+                 'By continuing, you indicate that you have read and understood Billboard\'s  ',
+style: TextStyle(
+           height: 1.5,
+           color: Colors.white70,
+          fontSize: 10,
+         // fontWeight: FontWeight.w500,
+          fontFamily: 'Lato'
+
+),
                  children: [
                    TextSpan(
                      text: 'Privacy Policy',
@@ -159,7 +242,7 @@ class _SignupState extends State<Signup> {
                          fontFamily: 'Lato'),
                    ),
                    TextSpan(
-                     text: ' and ',
+                     text: ' and  ',
                      style: TextStyle(
                          color: Colors.white70,
                          fontSize: 10.5,
@@ -172,7 +255,7 @@ class _SignupState extends State<Signup> {
                        ..onTap = () => Navigator.push(
                          context,
                          MaterialPageRoute(
-                             builder: (context) => PrivacyPolicy()),
+                             builder: (context) => TermsOfService()),
                        ),
                      style: TextStyle(
                          color: const Color(0xff7D2AE8),
@@ -184,16 +267,17 @@ class _SignupState extends State<Signup> {
                  ],
                ),
              ),
-           ],
+    ),
+
           ),
         ],
       ),
         bottomNavigationBar: Transform.translate(
           offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
           child: Container(
-              height: 90,
+              height: 100,
               //   color: const Color(0xffe9eff3),
-              padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+              padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: const Color(0xff057855),
