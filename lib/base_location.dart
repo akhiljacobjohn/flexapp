@@ -13,13 +13,13 @@ class _BaseLocaltionSetterState extends State<BaseLocaltionSetter> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset:false,
-      backgroundColor: const Color(0xff21252d),
+      backgroundColor: const Color(0xff2161b22),
       //backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
         titleSpacing: -10,
-        backgroundColor: const Color(0xff21252d),
+        backgroundColor: const Color(0xff2161b22),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             setState(() {
               Navigator.pop(context);
@@ -42,7 +42,7 @@ class _BaseLocaltionSetterState extends State<BaseLocaltionSetter> {
         children:[
         Padding(
             padding: EdgeInsets.fromLTRB(0, 20, 0, 25),
-            child: Image.asset('assets/images/location-pin.png', width: 35,)
+            child: Image.asset('assets/images/location-pin.png', width: 45,)
         ),
         ]
       ),

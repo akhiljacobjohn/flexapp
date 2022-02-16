@@ -27,15 +27,15 @@ class _OTPState extends State<OTP> {
 
 
         resizeToAvoidBottomInset:false,
-        backgroundColor: const Color(0xff21252d),
+        backgroundColor: const Color(0xff161b22),
         //backgroundColor: const Color(0xffffffff),
         appBar: AppBar(
           titleSpacing: -10,
-          backgroundColor: const Color(0xff21252d),
+          backgroundColor: const Color(0xff2161b22),
           // backgroundColor: const Color(0xff3c4852),
           elevation: 1,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               setState(() {
                 Navigator.pop(context);
@@ -66,7 +66,7 @@ class _OTPState extends State<OTP> {
             Padding(
                 padding: EdgeInsets.fromLTRB(20, 30, 20, 40),
                 child: Text(
-                  'Enter the six digit code sent to your phone number\n+91 9567890488',
+                  'Enter the six digit code sent to your phone number\n+91 9567890488 (Edit)',
                   style: TextStyle(
                       color: Colors.white54,
                       fontSize: 14,

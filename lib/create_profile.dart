@@ -27,13 +27,13 @@ class _ProfileState extends State<Profile> {
 
       child: Scaffold(
           resizeToAvoidBottomInset:false,
-          backgroundColor: const Color(0xff21252d),
+          backgroundColor: const Color(0xff161b22),
           //backgroundColor: const Color(0xffffffff),
           appBar: AppBar(
             titleSpacing: -10,
-            backgroundColor: const Color(0xff21252d),
+            backgroundColor: const Color(0xff2161b22),
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back_ios),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 setState(() {
                   Navigator.pop(context);
@@ -43,7 +43,7 @@ class _ProfileState extends State<Profile> {
             // backgroundColor: const Color(0xff3c4852),
               elevation: 1,
             //  automaticallyImplyLeading: false,
-            title: Text('Profile', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
+            title: Text('Profile', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', letterSpacing: 0.6,fontWeight: FontWeight.w600),),
             // centerTitle: true,
           ),
       body: Column(

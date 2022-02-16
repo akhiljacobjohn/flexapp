@@ -20,15 +20,15 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xff21252d),
+      backgroundColor: const Color(0xff161b22),
       //backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
         titleSpacing: -10,
-        backgroundColor: const Color(0xff21252d),
+        backgroundColor: const Color(0xff2161b22),
         // backgroundColor: const Color(0xff3c4852),
         elevation: 1,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             setState(() {
               Navigator.pop(context);
@@ -36,17 +36,17 @@ class _LoginState extends State<Login> {
           },
         ),
         //  automaticallyImplyLeading: false,
-       // title: Text('Log in', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
+       title: Text('Log in', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
         // centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
-            child:  Text('Log in', style: TextStyle(color: const Color(0xddffffff), fontSize: 24,  fontFamily: 'Lato', fontWeight: FontWeight.bold),),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
+          //   child:  Text('Log in', style: TextStyle(color: const Color(0xddffffff), fontSize: 24,  fontFamily: 'Lato', fontWeight: FontWeight.bold),),
+          // ),
 
           SizedBox(height: 20,),
           Container(

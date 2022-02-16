@@ -31,8 +31,8 @@ class _IntroScreenState extends State<IntroScreen> {
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor: const Color(0xff21252d),
-      statusBarColor: const Color(0xff21252d),
+      systemNavigationBarColor: const Color(0xff161b22),
+      statusBarColor: const Color(0xff161b22),
     ));
     focusNode.requestFocus();
   }
@@ -48,10 +48,10 @@ class _IntroScreenState extends State<IntroScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor:const Color(0xff21252d),
+        backgroundColor:const Color(0xff161b22),
       ),
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xff21252d),
+      backgroundColor: const Color(0xff161b22),
       //backgroundColor: const Color(0xff232A53),
       //backgroundColor: const Color(0xffffffff),
 

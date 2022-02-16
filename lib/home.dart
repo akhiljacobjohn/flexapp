@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: const Color(0xcc21252b),
+      backgroundColor: const Color(0xff2161b22),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: false,
@@ -71,8 +71,8 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-        backgroundColor: const Color(0xff21252b),
-        elevation: 4,
+        backgroundColor: const Color(0xff21262d),
+        elevation: 0,
         actions: [
           IconButton(
               onPressed: () {
@@ -101,7 +101,7 @@ class _HomeState extends State<Home> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 0.0, vertical: 4.0),
+                        EdgeInsets.symmetric(horizontal: 0.0, vertical: 1.0),
                     child: Column(
                       children: [
 
@@ -476,11 +476,11 @@ class _HomeState extends State<Home> {
           ],
         ),
         child: BottomNavigationBar(
-          backgroundColor: const Color(0xff21252d),
+          backgroundColor: const Color(0xff21262d),
           type: BottomNavigationBarType.fixed,
           // elevation:24,
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
           onTap: (value) {
             if (value == 0)
               Navigator.push(
@@ -516,85 +516,85 @@ class _HomeState extends State<Home> {
                 padding: EdgeInsets.only(bottom: 5),
                 child: Image.asset(
                   'assets/images/home-selected-icon.png',
-                  width: 20,
+                  width: 26,
                 ),
               ),
               icon: Padding(
                 padding: EdgeInsets.only(bottom: 5),
                 child: Image.asset(
                   'assets/images/home-unselected-icon.png',
-                  width: 20,
+                  width: 26,
                 ),
               ),
-              label: 'Home',
+              label: '',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
                 padding: EdgeInsets.only(bottom: 5),
                 child: Image.asset(
                   'assets/images/directory-selected-icon.png',
-                  width: 16,
+                  width: 20,
                 ),
               ),
               icon: Padding(
                 padding: EdgeInsets.only(bottom: 5),
                 child: Image.asset(
                   'assets/images/directory-unselected-icon.png',
-                  width: 16,
+                  width: 20,
                 ),
               ),
-              label: 'Index',
+              label: '',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
                 padding: EdgeInsets.only(bottom: 5),
                 child: Image.asset(
                   'assets/images/add-post-selected-icon.png',
-                  width: 18,
+                  width: 24,
                 ),
               ),
               icon: Padding(
                 padding: EdgeInsets.only(bottom: 5),
                 child: Image.asset(
                   'assets/images/add-post-unselected-icon.png',
-                  width: 18,
+                  width: 24,
                 ),
               ),
-              label: 'Post Ad',
+              label: '',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
                 padding: EdgeInsets.only(bottom: 5),
                 child: Image.asset(
                   'assets/images/business-profile-selected-icon.png',
-                  width: 18,
+                  width: 22,
                 ),
               ),
               icon: Padding(
                 padding: EdgeInsets.only(bottom: 5),
                 child: Image.asset(
                   'assets/images/business-profile-unselected-icon.png',
-                  width: 18,
+                  width: 22,
                 ),
               ),
-              label: 'My Shop',
+              label: '',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
                 padding: EdgeInsets.only(bottom: 5),
                 child: Image.asset(
                   'assets/images/settings-selected-icon.png',
-                  width: 20,
+                  width: 24,
                 ),
               ),
               icon: Padding(
                 padding: EdgeInsets.only(bottom: 5),
                 child: Image.asset(
                   'assets/images/settings-unselected-icon.png',
-                  width: 20,
+                  width: 24,
                 ),
               ),
-              label: 'Settings',
+              label: '',
             ),
           ],
           selectedLabelStyle:

@@ -28,16 +28,16 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xff21252d),
+      backgroundColor: const Color(0xff2161b22),
      // backgroundColor: const Color(0xff21252d),
       //backgroundColor: const Color(0xffffffff),
         appBar: AppBar(
           titleSpacing: -10,
-          backgroundColor: const Color(0xff21252d),
+          backgroundColor: const Color(0xff161b22),
           // backgroundColor: const Color(0xff3c4852),
           elevation: 1,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               setState(() {
                 Navigator.pop(context);
@@ -45,7 +45,7 @@ class _SignupState extends State<Signup> {
             },
           ),
           //  automaticallyImplyLeading: false,
-          //  title: Text('Get Started', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato',),),
+            title: Text('Get Started', style: TextStyle(color: const Color(0xddffffff), fontSize: 20, letterSpacing: 0.6, fontFamily: 'Lato',),),
           // centerTitle: true,
         ),
       body: Column(
@@ -55,10 +55,10 @@ class _SignupState extends State<Signup> {
           // Padding(
           //     padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
           //     child: Text('Get Started', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato'),)),
-          Padding(
-           padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
-            child:  Text('Get Started', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato',),),
-          ),
+          // Padding(
+          //  padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
+          //   child:  Text('Get Started', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato',),),
+          // ),
           //   child: RichText(
           //     text: TextSpan(
           //         text:
@@ -93,7 +93,7 @@ class _SignupState extends State<Signup> {
           //         fontFamily: 'Lato'),
           //   ),
           // ),
-          SizedBox(height: 10,),
+
           Container(
             //height: 50,
 
