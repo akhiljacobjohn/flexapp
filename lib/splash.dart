@@ -18,10 +18,11 @@ class Splash extends State<SplashScreen> {
   void initState() {
     super.initState();
      Timer(Duration(seconds: 2), () => Navigator.pushReplacementNamed(context, '/app-init'));
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-          systemNavigationBarColor: const Color(0xff412081),
-        ));
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    //       systemNavigationBarColor: const Color(0xff412081),
+    //     )
+    // );
+  //  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
   }
 
   void connectionChanged(dynamic hasConnection) {

@@ -24,6 +24,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: false,
+        titleSpacing: 5,
         title: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -36,33 +37,34 @@ class _HomeState extends State<Home> {
                       builder: (context) => BaseLocaltionSetter()),
                 );
               },
-              child: Image.asset(
-                'assets/images/home-zone-icon.png',
-                width: 18,
-              ),
+              child: Icon(Icons.location_on_rounded, size:28,color: const Color(0xff9146FF)),
+              // child: Image.asset(
+              //   'assets/images/home-zone-icon.png',
+              //   width: 18,
+              // ),
             ),
             // Container( padding: const EdgeInsets.all(0.0), child: IconButton(onPressed: (){}, icon: Image.asset('assets/images/home-zone-icon.png', width: 18,))),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.fromLTRB(12, 0, 10, 0),
+                  padding: EdgeInsets.fromLTRB(8, 0, 10, 0),
                   child: Text(
                     'Home',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'Lato'),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(12, 0, 10, 0),
+                  padding: EdgeInsets.fromLTRB(8, 0, 10, 0),
                   child: Text(
                     'Chittethukara, Kakkanad',
                     style: TextStyle(
                         color: Colors.white54,
-                        fontSize: 15,
+                        fontSize: 12,
                         //fontWeight: FontWeight.w600,
                         fontFamily: 'Lato'),
                   ),
@@ -81,10 +83,12 @@ class _HomeState extends State<Home> {
                   MaterialPageRoute(builder: (context) => Search()),
                 );
               },
-              icon: Image.asset(
-                'assets/images/search-icon.png',
-                width: 18,
-              ))
+              // icon: Image.asset(
+              //   'assets/images/search-icon.png',
+              //   width: 18,
+              // ),
+            icon: Icon(Icons.search_rounded     , size:28),
+          )
         ],
       ),
       body: ListView(
@@ -512,87 +516,110 @@ class _HomeState extends State<Home> {
 
           items: [
             BottomNavigationBarItem(
+
               activeIcon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Image.asset(
-                  'assets/images/home-selected-icon.png',
-                  width: 26,
-                ),
+                padding: EdgeInsets.only(bottom: 0),
+
+
+                  child: Container(
+                    width: 32,
+                    child: new FittedBox(
+                      fit: BoxFit.fill,
+                    child: Icon(Icons.home_filled, size: 32, color: const Color(0xff9146FF),),
+                    ),
+                  ),
+
+                // child: Image.asset(
+                //   'assets/images/home-selected-icon.png',
+                //   width: 26,
+                // ),
               ),
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Image.asset(
-                  'assets/images/home-unselected-icon.png',
-                  width: 26,
+                padding: EdgeInsets.only(bottom: 0),
+                child: new FittedBox(
+                  fit: BoxFit.fill,
+                  child: Icon(Icons.home_outlined, size: 32, color: const Color(0xff9146FF),),
                 ),
+                // child: Image.asset(
+                //   'assets/images/home-unselected-icon.png',
+                //   width: 26,
+                // ),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Image.asset(
-                  'assets/images/directory-selected-icon.png',
-                  width: 20,
-                ),
+                padding: EdgeInsets.only(bottom: 0),
+                child: Icon(Icons.list_alt, size: 30, color: const Color(0xff9146FF),),
+                // child: Image.asset(
+                //   'assets/images/directory-selected-icon.png',
+                //   width: 20,
+                // ),
               ),
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Image.asset(
-                  'assets/images/directory-unselected-icon.png',
-                  width: 20,
-                ),
+                padding: EdgeInsets.only(bottom: 0),
+                child: Icon(Icons.list_alt_outlined, size: 30, color: const Color(0xfff0f0f0),),
+                // child: Image.asset(
+                //   'assets/images/directory-unselected-icon.png',
+                //   width: 20,
+                // ),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Image.asset(
-                  'assets/images/add-post-selected-icon.png',
-                  width: 24,
-                ),
+                padding: EdgeInsets.only(bottom: 0),
+                child: Icon(Icons.add_circle, size: 32, color: const Color(0xff9146FF),),
+                // child: Image.asset(
+                //   'assets/images/add-post-selected-icon.png',
+                //   width: 24,
+                // ),
               ),
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Image.asset(
-                  'assets/images/add-post-unselected-icon.png',
-                  width: 24,
-                ),
+                padding: EdgeInsets.only(bottom: 0),
+                child: Icon(Icons.add_circle_outline, size: 32, color: const Color(0xfff0f0f0),),
+                // child: Image.asset(
+                //   'assets/images/add-post-unselected-icon.png',
+                //   width: 24,
+                // ),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Image.asset(
-                  'assets/images/business-profile-selected-icon.png',
-                  width: 22,
-                ),
+                padding: EdgeInsets.only(bottom: 0),
+                child: Icon(Icons.storefront, size: 30, color: const Color(0xff9146FF),),
+                // child: Image.asset(
+                //   'assets/images/business-profile-selected-icon.png',
+                //   width: 22,
+                // ),
               ),
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Image.asset(
-                  'assets/images/business-profile-unselected-icon.png',
-                  width: 22,
-                ),
+                padding: EdgeInsets.only(bottom: 0),
+                child: Icon(Icons.storefront, size: 30, color: const Color(0xfff0f0f0),),
+                // child: Image.asset(
+                //   'assets/images/business-profile-unselected-icon.png',
+                //   width: 22,
+                // ),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Image.asset(
-                  'assets/images/settings-selected-icon.png',
-                  width: 24,
-                ),
+                padding: EdgeInsets.only(bottom: 0),
+                child: Icon(Icons.reorder, size: 30, color: const Color(0xff9146FF),),
+                // child: Image.asset(
+                //   'assets/images/settings-selected-icon.png',
+                //   width: 24,
+                // ),
               ),
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Image.asset(
-                  'assets/images/settings-unselected-icon.png',
-                  width: 24,
-                ),
+                padding: EdgeInsets.only(bottom: 0),
+                child: Icon(Icons.reorder, size: 30, color: const Color(0xfff0f0f0),),
+                // child: Image.asset(
+                //   'assets/images/settings-unselected-icon.png',
+                //   width: 24,
+                // ),
               ),
               label: '',
             ),
@@ -601,8 +628,8 @@ class _HomeState extends State<Home> {
               TextStyle(fontSize: 10, fontWeight: FontWeight.normal),
           unselectedLabelStyle:
               TextStyle(fontSize: 10, fontWeight: FontWeight.normal),
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white,
+          // selectedItemColor: Colors.white,
+          // unselectedItemColor: Colors.red,
         ),
       ),
     );

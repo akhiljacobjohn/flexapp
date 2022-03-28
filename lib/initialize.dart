@@ -21,9 +21,9 @@ class _AppInitState extends State<AppInit> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 3), () => Navigator.pushReplacementNamed(context, '/intro'));
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor: const Color(0xff412081),
-    ));
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    //   systemNavigationBarColor: const Color(0xff412081),
+    // ));
   }
 
 
@@ -55,7 +55,7 @@ class _AppInitState extends State<AppInit> {
               'Getting Started...',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: 12,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'Lato'),
             ),

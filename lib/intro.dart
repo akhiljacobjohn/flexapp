@@ -11,7 +11,6 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 
 import 'otp.dart';
@@ -89,7 +88,7 @@ class _IntroScreenState extends State<IntroScreen> {
             Padding(
               padding: EdgeInsets.fromLTRB(10, 0, 10, 25),
               child: Text(
-                'Welcome to Billboard',
+                'Welcome to SuperMart',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white,
@@ -106,7 +105,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white54,
-                    fontSize: 18,
+                    fontSize: 16,
                     fontStyle: FontStyle.italic,
                     fontFamily: 'Lato'),
               ),

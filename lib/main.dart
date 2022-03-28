@@ -15,12 +15,10 @@ import 'home.dart';
 import 'otp.dart';
 
 Future<void> main() async {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    // statusBarColor: const Color(0xff7d2ae8),
-    //  statusBarColor: Colors.transparent,
-
-   // systemNavigationBarColor: const Color(0xff141414),
-  ));
+  // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  //   statusBarColor: const Color(0xff412081),
+  //  systemNavigationBarColor: const Color(0xff412081),
+  // ));
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
       AtlasApp());

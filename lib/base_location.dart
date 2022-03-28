@@ -42,7 +42,8 @@ class _BaseLocaltionSetterState extends State<BaseLocaltionSetter> {
         children:[
         Padding(
             padding: EdgeInsets.fromLTRB(0, 20, 0, 25),
-            child: Image.asset('assets/images/location-pin.png', width: 45,)
+            // child: Image.asset('assets/images/location-pin.png', width: 45,)
+            child: Icon(Icons.location_on_rounded, size: 65, color: const Color(0xff9146FF),)
         ),
         ]
       ),
