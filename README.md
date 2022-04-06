@@ -1,3 +1,3 @@
-# Buzzaar App
+# Flex App
 
-Buzzaar - Discover local businesses around you, instantly.
+Flex - Discover local businesses around you, instantly.

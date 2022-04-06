@@ -43,8 +43,8 @@ class Splash extends State<SplashScreen> {
         children: [
           Center(
             child: Image.asset(
-              'assets/images/logo.png',
-              width: 60,
+              'assets/images/brand.png',
+             width: 120,
             ),
             // child:Text(
             //   'localtym',

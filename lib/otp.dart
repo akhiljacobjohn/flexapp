@@ -43,28 +43,16 @@ class _OTPState extends State<OTP> {
             },
           ),
           //  automaticallyImplyLeading: false,
-         // title: Text('OTP', style: TextStyle(color: const Color(0xddffffff), fontSize: 24,  fontFamily: 'Lato',),),
-          centerTitle: true,
+          title: Text('OTP', style: TextStyle(color: const Color(0xddffffff), fontSize: 18, fontFamily: 'Lato',),),
+
         ),
         body: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Padding(
-            //     padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
-            //     child: Text('OTP', style: TextStyle(color: const Color(0xddffffff), fontSize: 24,  fontFamily: 'Lato', ),)),
-            // Padding(
-            //     padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-            //     child: Text(
-            //       'OTP',
-            //       style: TextStyle(
-            //           color: const Color(0xff7d2ae8),
-            //           fontSize: 28,
-            //           fontWeight: FontWeight.bold,
-            //           fontFamily: 'Lato'),
-            //     )),
+
             Padding(
-                padding: EdgeInsets.fromLTRB(20, 30, 20, 40),
+                padding: EdgeInsets.fromLTRB(20, 60, 20, 40),
                 child: Text(
                   'Enter the six digit code sent to your phone number\n+91 9567890488 (Edit)',
                   style: TextStyle(
@@ -338,37 +326,37 @@ class _OTPState extends State<OTP> {
                 ],
               ),
             ),
+            SizedBox(height: 50,),
+            Container(
+                height: 100,
+                width: double.infinity,
+                //   color: const Color(0xffe9eff3),
+                padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color(0xff057855),
+                    // primary: const Color(0xff7D2AE8),
+                    onPrimary: Colors.white,
+                    // foreground
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Profile()),
+                    );
+                  },
+                  child: Text(
+                    'VERIFY OTP',
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: const Color(0xfffdfdfd),
+                        fontFamily: 'Helvetica',
+                        fontWeight: FontWeight.normal),
+                  ),
+                )),
           ],
         ),
-        bottomNavigationBar: Transform.translate(
-          offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
-          child: Container(
-              height: 100,
-              //   color: const Color(0xffe9eff3),
-              padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: const Color(0xff057855),
-                 // primary: const Color(0xff7D2AE8),
-                  onPrimary: Colors.white,
-                  // foreground
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Profile()),
-                  );
-                },
-                child: Text(
-                  'VERIFY OTP',
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: const Color(0xfffdfdfd),
-                      fontFamily: 'Helvetica',
-                      fontWeight: FontWeight.normal),
-                ),
-              )),
-        )
+
 
 
 
