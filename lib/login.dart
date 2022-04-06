@@ -23,12 +23,12 @@ class _LoginState extends State<Login> {
       backgroundColor: const Color(0xff161b22),
       //backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
-        titleSpacing: -10,
+        titleSpacing: -5,
         backgroundColor: const Color(0xff2161b22),
         // backgroundColor: const Color(0xff3c4852),
         elevation: 1,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back_ios_rounded),
           onPressed: () {
             setState(() {
               Navigator.pop(context);
@@ -36,7 +36,7 @@ class _LoginState extends State<Login> {
           },
         ),
         //  automaticallyImplyLeading: false,
-       title: Text('Log in', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
+       title: Text('Log in', style: TextStyle(color: const Color(0xddffffff), fontSize: 18,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
         // centerTitle: true,
       ),
       body: Column(
@@ -117,7 +117,7 @@ maxLength: 16,
           ),
           SizedBox(height: 20,),
           InkWell(
-            child: Padding(padding: EdgeInsets.fromLTRB(15, 0, 15, 0) ,child: Text('Forgot Password?')),
+            child: Padding(padding: EdgeInsets.fromLTRB(15, 0, 15, 0) ,child: Text('Forgot Password?', style: TextStyle(fontSize: 14),)),
             onTap: () {
               Navigator.push(
                 context,

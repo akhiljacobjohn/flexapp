@@ -72,7 +72,7 @@ class _IntroScreenState extends State<IntroScreen> {
               height: 300,
               child: Image.asset(
                 'assets/images/local4.png',
-              //  width: 300,
+                width: 100,
               ),
             ),
             // Expanded(
@@ -82,13 +82,13 @@ class _IntroScreenState extends State<IntroScreen> {
             // ),
 
         SizedBox(
-              height: 40,
+              height: 30,
             ),
-
+        //     Expanded(child:SizedBox(height: 0,)),
             Padding(
               padding: EdgeInsets.fromLTRB(10, 0, 10, 25),
               child: Text(
-                'Welcome to SuperMart',
+                'Welcome to Buzzaar',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white,
@@ -105,7 +105,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white54,
-                    fontSize: 16,
+                    fontSize: 15,
                     fontStyle: FontStyle.italic,
                     fontFamily: 'Lato'),
               ),
@@ -210,7 +210,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 ),
               ),
             ),
-
+SizedBox(height: 20,)
 
           ],
         ),

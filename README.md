@@ -1,3 +1,3 @@
-# Billboard App
+# Buzzaar App
 
-Billboard - Discover local businesses around you, instantly.
+Buzzaar - Discover local businesses around you, instantly.
