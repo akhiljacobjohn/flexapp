@@ -39,7 +39,6 @@ class AtlasApp extends StatelessWidget {
       themeMode: _themeMode,
       initialRoute: '/',
       routes: {
-       // '/': (context) => SplashScreen(),
         '/': (context) => SplashScreen(),
         '/app-init': (context) => AppInit(),
         '/intro': (context) => IntroScreen(),

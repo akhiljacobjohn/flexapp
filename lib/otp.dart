@@ -29,23 +29,25 @@ class _OTPState extends State<OTP> {
         resizeToAvoidBottomInset:false,
         backgroundColor: const Color(0xff161b22),
         //backgroundColor: const Color(0xffffffff),
-        appBar: AppBar(
-          titleSpacing: -10,
-          backgroundColor: const Color(0xff2161b22),
-          // backgroundColor: const Color(0xff3c4852),
-          elevation: 1,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              setState(() {
-                Navigator.pop(context);
-              });
-            },
+      appBar: AppBar(
+      titleSpacing: -10,
+      backgroundColor: const Color(0xff1D2531),
+      // backgroundColor: const Color(0xff3c4852),
+      elevation: 1,
+      automaticallyImplyLeading: false,
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(Icons.arrow_back_ios_rounded, color: Colors.white70),
           ),
-          //  automaticallyImplyLeading: false,
-          title: Text('OTP', style: TextStyle(color: const Color(0xddffffff), fontSize: 18, fontFamily: 'Lato',),),
-
-        ),
+          Text('OTP', style: TextStyle(color: Colors.white70, fontSize: 18, fontFamily: 'Lato',),),
+        ],
+      ),
+      // centerTitle: true,
+    ),
         body: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -326,38 +328,39 @@ class _OTPState extends State<OTP> {
                 ],
               ),
             ),
-            SizedBox(height: 50,),
-            Container(
-                height: 100,
-                width: double.infinity,
-                //   color: const Color(0xffe9eff3),
-                padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: const Color(0xff057855),
-                    // primary: const Color(0xff7D2AE8),
-                    onPrimary: Colors.white,
-                    // foreground
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Profile()),
-                    );
-                  },
-                  child: Text(
-                    'VERIFY OTP',
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: const Color(0xfffdfdfd),
-                        fontFamily: 'Helvetica',
-                        fontWeight: FontWeight.normal),
-                  ),
-                )),
           ],
         ),
 
-
+        bottomNavigationBar: Transform.translate(
+          offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
+          child: Container(
+            height: 120,
+            width: double.infinity,
+            padding: EdgeInsets.fromLTRB(10, 30, 10, 40),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: const Color(0xff057855),
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+                // foreground
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                );
+              },
+              child: Text(
+                'VERIFY OTP',
+                style: TextStyle(
+                    fontSize: 15,
+                    color: const Color(0xfffdfdfd),
+                    fontFamily: 'Helvetica',
+                    fontWeight: FontWeight.normal),
+              ),
+            ),
+          ),)
 
 
     );

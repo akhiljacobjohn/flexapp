@@ -52,10 +52,10 @@ class _AppInitState extends State<AppInit> {
             ),
             SizedBox(height: 30,),
             Text(
-              'Getting Started...',
+              'Getting Started',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 12,
+                  fontSize: 14,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'Lato'),
             ),

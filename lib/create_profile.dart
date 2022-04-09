@@ -30,19 +30,21 @@ class _ProfileState extends State<Profile> {
           //backgroundColor: const Color(0xffffffff),
           appBar: AppBar(
             titleSpacing: -10,
-            backgroundColor: const Color(0xff2161b22),
-            leading: IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () {
-                setState(() {
-                  Navigator.pop(context);
-                });
-              },
-            ),
+            backgroundColor: const Color(0xff1D2531),
             // backgroundColor: const Color(0xff3c4852),
-              elevation: 1,
-            //  automaticallyImplyLeading: false,
-            title: Text('Profile', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', letterSpacing: 0.6,fontWeight: FontWeight.w600),),
+            elevation: 1,
+            automaticallyImplyLeading: false,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                IconButton(
+                  onPressed: () => Navigator.pop(context),
+                  icon: Icon(Icons.arrow_back_ios_rounded, color: Colors.white70),
+                ),
+                Text('Profile', style: TextStyle(color: Colors.white70, fontSize: 18, fontFamily: 'Lato',),),
+              ],
+            ),
             // centerTitle: true,
           ),
       body: Column(
@@ -61,7 +63,7 @@ class _ProfileState extends State<Profile> {
 //                 fontFamily: 'Lato'),
 //           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
+            padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
             child: Container(
               height: 50,
               child: TextFormField(
@@ -91,7 +93,7 @@ cursorHeight: 24,
                   ),
                   alignLabelWithHint: true,
                   hintText: "Name",
-                  hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
+                  hintStyle: TextStyle(color: Colors.white54, fontSize: 14, height: 0),
 
                   // suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
                   // suffixIconConstraints: BoxConstraints(
@@ -107,7 +109,7 @@ cursorHeight: 24,
           ),
           //SizedBox(height: 10,),
           Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+            padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
             child: Container(
               height: 50,
               child: TextFormField(
@@ -138,7 +140,7 @@ cursorHeight: 24,
                   ),
                   alignLabelWithHint: true,
                   hintText: "Password",
-                  hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
+                  hintStyle: TextStyle(color: Colors.white54, fontSize: 14, height: 0),
 
                   // suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
                   // suffixIconConstraints: BoxConstraints(
@@ -153,7 +155,7 @@ cursorHeight: 24,
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+            padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
             child: Container(
               height: 50,
               child: TextFormField(
@@ -186,7 +188,7 @@ cursorHeight: 24,
                   alignLabelWithHint: true,
 
                   hintText: "Re-enter Password",
-                  hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
+                  hintStyle: TextStyle(color: Colors.white54, fontSize: 14, height: 0),
 
                   // suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
                   // suffixIconConstraints: BoxConstraints(
@@ -201,7 +203,7 @@ cursorHeight: 24,
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+            padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
             child: Container(
               height: 50,
               child: TextFormField(
@@ -231,7 +233,7 @@ cursorHeight: 24,
                   ),
                   alignLabelWithHint: true,
                   hintText: "Email",
-                  hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
+                  hintStyle: TextStyle(color: Colors.white54, fontSize: 14, height: 0),
 
 
                 ),
@@ -251,34 +253,37 @@ cursorHeight: 24,
           // SizedBox(height: 100,),
         ],
       ),
-    bottomNavigationBar: Transform.translate(
-    offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
-    child: Container(
-      height: 100,
-      width: double.infinity,
-      padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          primary: const Color(0xff057855),
-          onPrimary: Colors.white,
-          // foreground
-        ),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => BaseLocaltionSetter()),
-          );
-        },
-        child: Text(
-          'CONTINUE',
-          style: TextStyle(
-              fontSize: 15,
-              color: const Color(0xfffdfdfd),
-              fontFamily: 'Helvetica',
-              fontWeight: FontWeight.normal),
-        ),
-      ),
-    ),)
+
+          bottomNavigationBar: Transform.translate(
+            offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
+            child: Container(
+              height: 120,
+              width: double.infinity,
+              padding: EdgeInsets.fromLTRB(10, 30, 10, 40),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: const Color(0xff057855),
+                  onPrimary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                  // foreground
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BaseLocaltionSetter()),
+                  );
+                },
+                child: Text(
+                  'SUBMIT',
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: const Color(0xfffdfdfd),
+                      fontFamily: 'Helvetica',
+                      fontWeight: FontWeight.normal),
+                ),
+              ),
+            ),)
     ),);
   }
 }

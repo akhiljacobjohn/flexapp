@@ -73,7 +73,7 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-        backgroundColor: const Color(0xff21262d),
+        backgroundColor: const Color(0xff1D2531 ),
         elevation: 0,
         actions: [
           IconButton(
@@ -87,7 +87,7 @@ class _HomeState extends State<Home> {
               //   'assets/images/search-icon.png',
               //   width: 18,
               // ),
-            icon: Icon(Icons.search_rounded     , size:28),
+            icon: Icon(Icons.search_rounded     , size:24),
           )
         ],
       ),
@@ -483,8 +483,8 @@ class _HomeState extends State<Home> {
           backgroundColor: const Color(0xff21262d),
           type: BottomNavigationBarType.fixed,
           // elevation:24,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
           onTap: (value) {
             if (value == 0)
               Navigator.push(
@@ -517,117 +517,97 @@ class _HomeState extends State<Home> {
           items: [
             BottomNavigationBarItem(
 
-              activeIcon: Padding(
-                padding: EdgeInsets.only(bottom: 0),
-
-
-                  child: Container(
-                    width: 32,
-                    child: new FittedBox(
-                      fit: BoxFit.fill,
-                    child: Icon(Icons.home_filled, size: 32, color: const Color(0xff9146FF),),
-                    ),
-                  ),
-
-                // child: Image.asset(
-                //   'assets/images/home-selected-icon.png',
-                //   width: 26,
-                // ),
+              activeIcon: Image.asset(
+                'assets/images/home-selected-icon.png',
+                width: 22,
               ),
-              icon: Padding(
-                padding: EdgeInsets.only(bottom: 0),
-                child: new FittedBox(
-                  fit: BoxFit.fill,
-                  child: Icon(Icons.home_outlined, size: 32, color: const Color(0xff9146FF),),
+              icon: Image.asset(
+                'assets/images/home-unselected-icon.png',
+                width: 22,
+              ),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              activeIcon: Padding(
+                padding: EdgeInsets.only(bottom: 2),
+              //  child: Icon(Icons.list_alt, size: 28, color: const Color(0xff9146FF),),
+                child: Image.asset(
+                  'assets/images/directory-selected-icon.png',
+                  width: 22,
                 ),
-                // child: Image.asset(
-                //   'assets/images/home-unselected-icon.png',
-                //   width: 26,
-                // ),
               ),
-              label: '',
+              icon: Padding(
+                padding: EdgeInsets.only(bottom: 2),
+               // child: Icon(Icons.list_alt_outlined, size: 28, color: const Color(0xfff0f0f0),),
+                child: Image.asset(
+                  'assets/images/directory-unselected-icon.png',
+                  width: 22,
+                ),
+              ),
+              label: 'Explore',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: EdgeInsets.only(bottom: 0),
-                child: Icon(Icons.list_alt, size: 30, color: const Color(0xff9146FF),),
-                // child: Image.asset(
-                //   'assets/images/directory-selected-icon.png',
-                //   width: 20,
-                // ),
+                padding: EdgeInsets.only(bottom: 2),
+                // child: Icon(Icons.add_circle, size: 28, color: const Color(0xff9146FF),),
+                child: Image.asset(
+                  'assets/images/add-post-selected-icon.png',
+                  width: 24,
+                ),
               ),
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 0),
-                child: Icon(Icons.list_alt_outlined, size: 30, color: const Color(0xfff0f0f0),),
-                // child: Image.asset(
-                //   'assets/images/directory-unselected-icon.png',
-                //   width: 20,
-                // ),
+                padding: EdgeInsets.only(bottom: 2),
+               // child: Icon(Icons.add_circle_outline, size: 28, color: const Color(0xfff0f0f0),),
+                child: Image.asset(
+                  'assets/images/add-post-unselected-icon.png',
+                  width: 24,
+                ),
               ),
-              label: '',
+              label: 'Post',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: EdgeInsets.only(bottom: 0),
-                child: Icon(Icons.add_circle, size: 32, color: const Color(0xff9146FF),),
-                // child: Image.asset(
-                //   'assets/images/add-post-selected-icon.png',
-                //   width: 24,
-                // ),
+                padding: EdgeInsets.only(bottom: 2),
+                //child: Icon(Icons.storefront, size: 28, color: const Color(0xff9146FF),),
+                child: Image.asset(
+                  'assets/images/business-profile-selected-icon.png',
+                  width: 22,
+                ),
               ),
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 0),
-                child: Icon(Icons.add_circle_outline, size: 32, color: const Color(0xfff0f0f0),),
-                // child: Image.asset(
-                //   'assets/images/add-post-unselected-icon.png',
-                //   width: 24,
-                // ),
+                padding: EdgeInsets.only(bottom: 2),
+               // child: Icon(Icons.storefront, size: 28, color: const Color(0xfff0f0f0),),
+                child: Image.asset(
+                  'assets/images/business-profile-unselected-icon.png',
+                  width: 22,
+                ),
               ),
-              label: '',
+              label: 'My Shop',
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: EdgeInsets.only(bottom: 0),
-                child: Icon(Icons.storefront, size: 30, color: const Color(0xff9146FF),),
-                // child: Image.asset(
-                //   'assets/images/business-profile-selected-icon.png',
-                //   width: 22,
-                // ),
+                padding: EdgeInsets.only(bottom: 2),
+             //   child: Icon(Icons.reorder, size: 28, color: const Color(0xff9146FF),),
+                child: Image.asset(
+                  'assets/images/settings-selected-icon.png',
+                  width: 22,
+                ),
               ),
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 0),
-                child: Icon(Icons.storefront, size: 30, color: const Color(0xfff0f0f0),),
-                // child: Image.asset(
-                //   'assets/images/business-profile-unselected-icon.png',
-                //   width: 22,
-                // ),
+                padding: EdgeInsets.only(bottom: 2),
+               // child: Icon(Icons.account_circle_outlined, size: 28, color: const Color(0xfff0f0f0),),
+                child: Image.asset(
+                  'assets/images/settings-unselected-icon.png',
+                  width: 22,
+                ),
               ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              activeIcon: Padding(
-                padding: EdgeInsets.only(bottom: 0),
-                child: Icon(Icons.reorder, size: 30, color: const Color(0xff9146FF),),
-                // child: Image.asset(
-                //   'assets/images/settings-selected-icon.png',
-                //   width: 24,
-                // ),
-              ),
-              icon: Padding(
-                padding: EdgeInsets.only(bottom: 0),
-                child: Icon(Icons.reorder, size: 30, color: const Color(0xfff0f0f0),),
-                // child: Image.asset(
-                //   'assets/images/settings-unselected-icon.png',
-                //   width: 24,
-                // ),
-              ),
-              label: '',
+              label: 'More',
             ),
           ],
           selectedLabelStyle:
-              TextStyle(fontSize: 10, fontWeight: FontWeight.normal),
+              TextStyle(fontSize: 9, fontWeight: FontWeight.normal),
           unselectedLabelStyle:
-              TextStyle(fontSize: 10, fontWeight: FontWeight.normal),
+              TextStyle(fontSize: 9, fontWeight: FontWeight.normal),
           // selectedItemColor: Colors.white,
           // unselectedItemColor: Colors.red,
         ),

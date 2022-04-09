@@ -36,15 +36,15 @@ class Splash extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff412081),
-     // backgroundColor: const Color(0xff412081),
+       backgroundColor: const Color(0xff412081),
+   //  backgroundColor: const Color(0xff21262d),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: Image.asset(
               'assets/images/brand.png',
-             width: 120,
+             width: 100,
             ),
             // child:Text(
             //   'localtym',

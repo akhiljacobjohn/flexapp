@@ -28,43 +28,56 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xff2161b22),
+      backgroundColor: const Color(0xff161b22),
      // backgroundColor: const Color(0xff21252d),
       //backgroundColor: const Color(0xffffffff),
         appBar: AppBar(
           titleSpacing: -10,
-          backgroundColor: const Color(0xff161b22),
+          backgroundColor: const Color(0xff1D2531),
           // backgroundColor: const Color(0xff3c4852),
           elevation: 1,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              setState(() {
-                Navigator.pop(context);
-              });
-            },
+          automaticallyImplyLeading: false,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: Icon(Icons.arrow_back_ios_rounded, color: Colors.white70),
+              ),
+              Text('Get Started', style: TextStyle(color: Colors.white70, fontSize: 18, fontFamily: 'Lato',),),
+            ],
           ),
-          //  automaticallyImplyLeading: false,
-            title: Text('Get Started', style: TextStyle(color: const Color(0xddffffff), fontSize: 18, fontFamily: 'Lato',),),
           // centerTitle: true,
         ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
+          Padding(
+            padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
+            child: Text(
+              'Enter your 10 digit mobile number to get started with Flex',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: const Color(0xffC3C3C3),
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Lato',),
+            ),
+          ),
 
           Container(
             //height: 50,
 
-            padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: DropdownButton<String>(
               elevation: 1,
               itemHeight: null,
              isExpanded:true,
               underline: Container(color:Colors.white10, height:1),
               iconEnabledColor: const Color(0xff7D2AE8),
-              hint: new Text("🇮🇳  India (+91)"),
+              hint: new Text("🇮🇳  India (+91)", style: TextStyle(color: const Color(0xffC3C3C3), fontSize: 15,), ),
               items: <String>['🇮🇳  India (+91)'].map((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
@@ -81,7 +94,7 @@ class _SignupState extends State<Signup> {
                 Container(
                   height: 50,
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: TextField(
     controller: myTextEditingController,
                       keyboardType: TextInputType.phone,
@@ -114,95 +127,38 @@ counterText: "",
                   ),
                 ),
 
-
-
-         Padding(
-               padding: EdgeInsets.fromLTRB(15, 20, 15, 30),
-             child:RichText(
-               textAlign: TextAlign.start,
-               text: TextSpan(
-                 text:
-                 'By continuing, you indicate that you have read and understood Flex\'s  ',
-style: TextStyle(
-           height: 1.5,
-           color: Colors.white70,
-          fontSize: 10,
-         // fontWeight: FontWeight.w500,
-          fontFamily: 'Lato'
-
-),
-                 children: [
-                   TextSpan(
-                     text: 'Privacy Policy ',
-                     recognizer: new TapGestureRecognizer()
-                       ..onTap = () => Navigator.push(
-                         context,
-                         MaterialPageRoute(
-                             builder: (context) => PrivacyPolicy()),
-                       ),
-                     style: TextStyle(
-                         color: const Color(0xff7D2AE8),
-                         fontSize: 10.5,
-                         fontWeight: FontWeight.w500,
-                         //  decoration: TextDecoration.underline,
-                         fontFamily: 'Lato'),
-                   ),
-                   TextSpan(
-                     text: ' and  ',
-                     style: TextStyle(
-                         color: Colors.white70,
-                         fontSize: 10.5,
-                         fontWeight: FontWeight.w500,
-                         fontFamily: 'Lato'),
-                   ),
-                   TextSpan(
-                     text: 'Terms of Service.',
-                     recognizer: new TapGestureRecognizer()
-                       ..onTap = () => Navigator.push(
-                         context,
-                         MaterialPageRoute(
-                             builder: (context) => TermsOfService()),
-                       ),
-                     style: TextStyle(
-                         color: const Color(0xff7D2AE8),
-                         fontSize: 10.5,
-                         fontWeight: FontWeight.w500,
-                         //  decoration: TextDecoration.underline,
-                         fontFamily: 'Lato'),
-                   ),
-                 ],
-               ),
-             ),
-    ),
-
-          Container(
-              height: 100,
-              width: double.infinity,
-              //   color: const Color(0xffe9eff3),
-              padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: const Color(0xff057855),
-                  onPrimary: Colors.white,
-                  // foreground
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OTP() ),
-                  );
-                },
-                child: Text(
-                  'SEND OTP',
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: const Color(0xfffdfdfd),
-                      fontFamily: 'Lato',
-                      fontWeight: FontWeight.normal),
-                ),
-              )),
         ],
       ),
+        bottomNavigationBar: Transform.translate(
+          offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
+          child: Container(
+            height: 120,
+            width: double.infinity,
+            padding: EdgeInsets.fromLTRB(10, 30, 10, 40),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: const Color(0xff057855),
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+                // foreground
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => OTP()),
+                );
+              },
+              child: Text(
+                'SEND OTP',
+                style: TextStyle(
+                    fontSize: 15,
+                    color: const Color(0xfffdfdfd),
+                    fontFamily: 'Helvetica',
+                    fontWeight: FontWeight.normal),
+              ),
+            ),
+          ),)
     );
   }
 }

@@ -15,23 +15,15 @@ class _BaseLocaltionSetterState extends State<BaseLocaltionSetter> {
       resizeToAvoidBottomInset:false,
       backgroundColor: const Color(0xff2161b22),
       //backgroundColor: const Color(0xffffffff),
-      appBar: AppBar(
-        titleSpacing: -10,
-        backgroundColor: const Color(0xff2161b22),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            setState(() {
-              Navigator.pop(context);
-            });
-          },
+        appBar: AppBar(
+         // titleSpacing: -10,
+          backgroundColor: const Color(0xff2161b22),
+          // backgroundColor: const Color(0xff3c4852),
+          elevation: 0,
+          automaticallyImplyLeading: false,
+
+          // centerTitle: true,
         ),
-        // backgroundColor: const Color(0xff3c4852),
-        elevation: 1,
-        //  automaticallyImplyLeading: false,
-        title: Text('', style: TextStyle(color: const Color(0xddffffff), fontSize: 20,  fontFamily: 'Lato', fontWeight: FontWeight.w600),),
-        // centerTitle: true,
-      ),
     body: Column(
     // mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,18 +35,18 @@ class _BaseLocaltionSetterState extends State<BaseLocaltionSetter> {
         Padding(
             padding: EdgeInsets.fromLTRB(0, 20, 0, 25),
             // child: Image.asset('assets/images/location-pin.png', width: 45,)
-            child: Icon(Icons.location_on_rounded, size: 65, color: const Color(0xff9146FF),)
+            child: Icon(Icons.location_on_rounded, size: 60, color: const Color(0xff9146FF),)
         ),
         ]
       ),
       Padding(
           padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
           child: Text(
-            'Enter your area pin code and allow location permissions when requested.  Billboard will set this as your home location.  You can change this later from your home screen.',
+            'Enter your area pin code (also known as zip code or post code) and allow location permissions when requested.\n\nFlex will set this as your home location.  You can change this later from your home screen.',
             style: TextStyle(
                 color: Colors.white54,
                 fontSize: 14,
-                height: 1.6,
+                height: 1.5,
                 fontWeight: FontWeight.normal,
                 fontFamily: 'Lato'),
             textAlign: TextAlign.start,
@@ -91,7 +83,7 @@ counterText: "",
               ),
               alignLabelWithHint: true,
               hintText: "Pin code",
-              hintStyle: TextStyle(color: Colors.white54, fontSize: 16, height: 0),
+              hintStyle: TextStyle(color: Colors.white54, fontSize: 15, height: 0),
 
               // suffixIcon: Padding(padding: const EdgeInsetsDirectional.only(end: 10.0), child: Image.asset('assets/images/locate.png')),
               // suffixIconConstraints: BoxConstraints(
@@ -109,13 +101,15 @@ counterText: "",
         bottomNavigationBar: Transform.translate(
           offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
           child: Container(
-            height: 100,
+            height: 120,
             width: double.infinity,
-            padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
+            padding: EdgeInsets.fromLTRB(10, 30, 10, 40),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: const Color(0xff057855),
                 onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
                 // foreground
               ),
               onPressed: () {
@@ -125,7 +119,7 @@ counterText: "",
                 );
               },
               child: Text(
-                'SUBMIT',
+                'CONTINUE',
                 style: TextStyle(
                     fontSize: 15,
                     color: const Color(0xfffdfdfd),
