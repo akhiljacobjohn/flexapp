@@ -42,7 +42,7 @@ class _BaseLocaltionSetterState extends State<BaseLocaltionSetter> {
       Padding(
           padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
           child: Text(
-            'Enter your area pin code (also known as zip code or post code) and allow location permissions when requested.\n\nFlex will set this as your home location.  You can change this later from your home screen.',
+            'Enter your area pin code (also known as zip code or post code) or use the auto detect button. Flex will set this as your base location. You can change this later from your home.',
             style: TextStyle(
                 color: Colors.white54,
                 fontSize: 14,
@@ -101,9 +101,9 @@ counterText: "",
         bottomNavigationBar: Transform.translate(
           offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
           child: Container(
-            height: 120,
+            height: 110,
             width: double.infinity,
-            padding: EdgeInsets.fromLTRB(10, 30, 10, 40),
+            padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: const Color(0xff057855),

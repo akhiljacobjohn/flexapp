@@ -31,41 +31,80 @@ class _SignupState extends State<Signup> {
       backgroundColor: const Color(0xff161b22),
      // backgroundColor: const Color(0xff21252d),
       //backgroundColor: const Color(0xffffffff),
-        appBar: AppBar(
-          titleSpacing: -10,
-          backgroundColor: const Color(0xff1D2531),
-          // backgroundColor: const Color(0xff3c4852),
-          elevation: 1,
-          automaticallyImplyLeading: false,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: Icon(Icons.arrow_back_ios_rounded, color: Colors.white70),
-              ),
-              Text('Get Started', style: TextStyle(color: Colors.white70, fontSize: 18, fontFamily: 'Lato',),),
-            ],
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(30.0),
+          child: AppBar(
+            backgroundColor: const Color(0xff161b22),
+            elevation: 0,
+            automaticallyImplyLeading: false,
           ),
-          // centerTitle: true,
         ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
-            child: Text(
-              'Enter your 10 digit mobile number to get started with Flex',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: const Color(0xffC3C3C3),
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                fontFamily: 'Lato',),
-            ),
+          // Card(
+          //   child: Container(
+          //     height: 100,
+          //     width: double.infinity,
+          //     decoration: BoxDecoration(
+          //         borderRadius: BorderRadius.circular(0.0),
+          //         image: DecorationImage(
+          //           //  fit: BoxFit.cover,
+          //             image: AssetImage('assets/images/brand_color.png'))),
+          //     child: Padding(
+          //       padding: const EdgeInsets.all(10.0),
+          //       child: Text('Nouveautés'),
+          //     ),
+          //   ),
+          //   margin: EdgeInsets.only(left: 0.0, right: 0.0, top: 0.0),
+          // ),
+
+          Row(
+
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(10, 0, 0, 10),
+                    child: Text(
+                      'Get Started',
+                      style: TextStyle(
+                        color: const Color(0xff7D2AE8),
+                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Lato',),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(10, 0, 0, 20),
+                    child: Text(
+                      'Enter phone number to continue',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Lato',),
+                    ),
+                  ),
+
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                // child: Image.asset(
+                //   'assets/images/phone-get-started.png',
+                //   width: 60,
+                //  // height: 40,
+                // ),
+                // child: Icon(Icons.vpn_key_sharp, size: 45,  color: const Color(0xff7D2AE8),),
+              ),
+
+            ],
           ),
+
 
           Container(
             //height: 50,
@@ -132,9 +171,9 @@ counterText: "",
         bottomNavigationBar: Transform.translate(
           offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
           child: Container(
-            height: 120,
+            height: 110,
             width: double.infinity,
-            padding: EdgeInsets.fromLTRB(10, 30, 10, 40),
+            padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: const Color(0xff057855),

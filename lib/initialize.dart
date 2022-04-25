@@ -20,7 +20,7 @@ class _AppInitState extends State<AppInit> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () => Navigator.pushReplacementNamed(context, '/intro'));
+    Timer(Duration(seconds: 2), () => Navigator.pushReplacementNamed(context, '/intro'));
     // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     //   systemNavigationBarColor: const Color(0xff412081),
     // ));

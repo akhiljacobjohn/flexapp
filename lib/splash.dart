@@ -17,7 +17,7 @@ class Splash extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-     Timer(Duration(seconds: 2), () => Navigator.pushReplacementNamed(context, '/app-init'));
+    Timer(Duration(seconds: 2), () => Navigator.pushReplacementNamed(context, '/app-init'));
     // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     //       systemNavigationBarColor: const Color(0xff412081),
     //     )
@@ -44,7 +44,7 @@ class Splash extends State<SplashScreen> {
           Center(
             child: Image.asset(
               'assets/images/brand.png',
-             width: 100,
+             width: 105,
             ),
             // child:Text(
             //   'localtym',

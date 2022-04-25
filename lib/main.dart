@@ -42,6 +42,7 @@ class AtlasApp extends StatelessWidget {
         '/': (context) => SplashScreen(),
         '/app-init': (context) => AppInit(),
         '/intro': (context) => IntroScreen(),
+
         '/get-started': (context) => Signup(),
         '/otp': (context) => OTP(),
         '/pin-code': (context) => Profile(),

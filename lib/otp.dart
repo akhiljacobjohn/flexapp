@@ -31,7 +31,7 @@ class _OTPState extends State<OTP> {
         //backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
       titleSpacing: -10,
-      backgroundColor: const Color(0xff1D2531),
+      backgroundColor: const Color(0xff161b22),
       // backgroundColor: const Color(0xff3c4852),
       elevation: 1,
       automaticallyImplyLeading: false,
@@ -41,9 +41,8 @@ class _OTPState extends State<OTP> {
         children: <Widget>[
           IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back_ios_rounded, color: Colors.white70),
+            icon: Icon(Icons.arrow_back_ios_rounded, color: const Color(0xff7D2AE8),),
           ),
-          Text('OTP', style: TextStyle(color: Colors.white70, fontSize: 18, fontFamily: 'Lato',),),
         ],
       ),
       // centerTitle: true,
@@ -52,14 +51,21 @@ class _OTPState extends State<OTP> {
           // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-
             Padding(
-                padding: EdgeInsets.fromLTRB(20, 60, 20, 40),
+              padding: EdgeInsets.fromLTRB(0, 40, 0, 10),
+              // child: Text('OTP', style: TextStyle(color: const Color(0xff7D2AE8),
+              //   fontSize: 22,
+              //   fontWeight: FontWeight.w500,
+              //   fontFamily: 'Lato',),),
+              child: Image.asset('assets/images/otp.png', width: 60,),
+            ),
+            Padding(
+                padding: EdgeInsets.fromLTRB(0, 10, 0, 40),
                 child: Text(
-                  'Enter the six digit code sent to your phone number\n+91 9567890488 (Edit)',
+                  'Enter the six digit code sent to your phone number\n+91 9567890488 (change)',
                   style: TextStyle(
                       color: Colors.white54,
-                      fontSize: 14,
+                      fontSize: 12,
                       height: 1.5,
                       fontWeight: FontWeight.normal,
                       fontFamily: 'Lato'),
@@ -334,9 +340,9 @@ class _OTPState extends State<OTP> {
         bottomNavigationBar: Transform.translate(
           offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
           child: Container(
-            height: 120,
+            height: 110,
             width: double.infinity,
-            padding: EdgeInsets.fromLTRB(10, 30, 10, 40),
+            padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: const Color(0xff057855),

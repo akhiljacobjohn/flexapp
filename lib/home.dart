@@ -22,6 +22,8 @@ class _HomeState extends State<Home> {
       resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff2161b22),
       appBar: AppBar(
+        backgroundColor: const Color(0xff21262d ),
+        elevation: 0,
         automaticallyImplyLeading: false,
         centerTitle: false,
         titleSpacing: 5,
@@ -73,8 +75,7 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-        backgroundColor: const Color(0xff1D2531 ),
-        elevation: 0,
+
         actions: [
           IconButton(
               onPressed: () {
@@ -91,78 +92,45 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: ListView(
-        physics: AlwaysScrollableScrollPhysics(),
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(0.0),
-            child: Container(
-              width: double.infinity,
-              //  height: 500,
-              // color: Colors.white38,
+      body: Container(
+    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+    child: SingleChildScrollView(
+    scrollDirection: Axis.vertical,
+    child: Column(
+      children: [
+      Card(
+        color: const Color(0xff1D2531),
 
-              child: Column(
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 0.0, vertical: 1.0),
-                    child: Column(
-                      children: [
-
-                        Container(
-                          width: double.infinity,
-                          height: 400,
-                          //color: Colors.black26,
-                          decoration: BoxDecoration(
-                              // boxShadow: [BoxShadow(
-                              //   color: Colors.black26,
-                              //   offset: Offset(0,2),
-                              //   blurRadius: 1.0,
-                              // ),],
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/images/sample1.jpeg'),
-                                  fit: BoxFit.fill)),
-                        ),
-                        ListTile(
-                          dense: true,
+     elevation: 10,
+     // clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: [
+          Image.asset('assets/images/sample1.jpeg'),
+          ListTile(
+            contentPadding: const EdgeInsets.fromLTRB(5,5,15,5),
+            dense: true,
                           horizontalTitleGap: 10.0,
                           minLeadingWidth : 0,
-                          //tileColor: const Color(0xff353D5D),
-                          leading:  Container(
-                            //margin: EdgeInsets.all(0.0),
-
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              // color: Colors.red,
-                              shape: BoxShape.circle,
-                              // boxShadow: [
-                              //   BoxShadow(
-                              //     color: Colors.black45,
-                              //     offset: Offset(0, 2),
-                              //     blurRadius: 6.0,
-                              //   )
-                              // ],
-                            ),
-                            child: CircleAvatar(
-                              child: ClipOval(
-                                child: Image(
-                                  height: 40,
-                                  width: 40,
-                                  image: AssetImage(
-                                      'assets/images/default-user.png'),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                          title: Text('Shavarma Daddy (@shavarma_daddy)'),
+           leading:  Container(
+            width: 50,
+            height: 50,
+            child: CircleAvatar(
+              child: ClipOval(
+                child: Image(
+                  height: 50,
+                 // width: 50,
+                  image: AssetImage(
+                      'assets/images/default-user.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+                          title: Text('Shavarma Daddy\n(@shavarma_daddy)', style: TextStyle(fontSize: 12),),
                           subtitle: Align(
                               alignment: Alignment.centerLeft,
                               child: Image.asset('assets/images/rating.png', height: 12,)),
-                          contentPadding:EdgeInsets.fromLTRB(10,0,15,0),
-                          trailing: SizedBox(
+                                      trailing: SizedBox(
                             width: 100,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -191,284 +159,225 @@ class _HomeState extends State<Home> {
                               ],
                             ),
                           ),
-
-//trailing:  Image.asset('assets/images/like.png', width: 24,),
-                        ),
-                        Row(
-                          children: [
-                            Flexible(
-                                child:Padding(
-                                  padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                  child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-                                    textAlign: TextAlign.start,),
-                                )),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
           ),
-          const Divider(
-            height: 30,
-            thickness: 0.5,
-            // indent: 20,
-            // endIndent: 20,
-            color: Colors.white12,
-          ),
-//--------------------------------------------------------------------------------------------------------------
           Padding(
-            padding: EdgeInsets.all(0.0),
-            child: Container(
-              width: double.infinity,
-              //  height: 500,
-              // color: Colors.white38,
-
-              child: Column(
-                children: [
-                  Padding(
-                    padding:
-                    EdgeInsets.symmetric(horizontal: 0.0, vertical: 4.0),
-                    child: Column(
-                      children: [
-
-                        Container(
-                          width: double.infinity,
-                          height: 400,
-                          //color: Colors.black26,
-                          decoration: BoxDecoration(
-                            // boxShadow: [BoxShadow(
-                            //   color: Colors.black26,
-                            //   offset: Offset(0,2),
-                            //   blurRadius: 1.0,
-                            // ),],
-                              image: DecorationImage(
-                                  image:
-                                  AssetImage('assets/images/sample2.jpeg'),
-                                  fit: BoxFit.fill)),
-                        ),
-                        ListTile(
-                          dense: true,
-                          horizontalTitleGap: 10.0,
-                          minLeadingWidth : 0,
-                          //tileColor: const Color(0xff353D5D),
-                          leading:  Container(
-                            //margin: EdgeInsets.all(0.0),
-
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              // color: Colors.red,
-                              shape: BoxShape.circle,
-                              // boxShadow: [
-                              //   BoxShadow(
-                              //     color: Colors.black45,
-                              //     offset: Offset(0, 2),
-                              //     blurRadius: 6.0,
-                              //   )
-                              // ],
-                            ),
-                            child: CircleAvatar(
-                              child: ClipOval(
-                                child: Image(
-                                  height: 40,
-                                  width: 40,
-                                  image: AssetImage(
-                                      'assets/images/default-user.png'),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                          title: Text('Shavarma Daddy (@shavarma_daddy)'),
-                          subtitle: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Image.asset('assets/images/rating.png', height: 12,)),
-                          contentPadding:EdgeInsets.fromLTRB(10,0,15,0),
-                          trailing: SizedBox(
-                            width: 100,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.favorite_border,
-                                  color: const Color(0xff9146FF),
-                                  size: 24,
-                                ),
-                                Icon(
-                                  Icons.bookmark_border_outlined,
-                                  color: const Color(0xff9146FF),
-                                  size: 24,
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(bottom: 5),
-                                    child: Icon(
-                                      Icons.ios_share_rounded,
-                                      color: const Color(0xff9146FF),
-                                      size: 24,
-                                    )),
-                                // Image.asset('assets/images/like.png', width: 24, height: 24,),
-                                // Image.asset('assets/images/bookmark.png', width: 24, height: 22,),
-                                // Image.asset('assets/images/share.png', width: 24,),
-                              ],
-                            ),
-                          ),
-
-//trailing:  Image.asset('assets/images/like.png', width: 24,),
-                        ),
-                        Row(
-                          children: [
-                            Flexible(
-                                child:Padding(
-                                  padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                  child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-                                    textAlign: TextAlign.start,),
-                                )),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
+            padding: const EdgeInsets.fromLTRB(5,0,5,20),
+            child: Text(
+              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+              // style: TextStyle(color: Colors.black.withOpacity(0.6)),
             ),
           ),
-          const Divider(
-            height: 30,
-            thickness: 0.5,
-            // indent: 20,
-            // endIndent: 20,
-            color: Colors.white12,
-          ),
-          //---------------------------------------------------------------------------------------------------------------
-          Padding(
-            padding: EdgeInsets.all(0.0),
-            child: Container(
-              width: double.infinity,
-              //  height: 500,
-              // color: Colors.white38,
+          // ButtonBar(
+          //   alignment: MainAxisAlignment.start,
+          //   children: [
+          //     FlatButton(
+          //       textColor: const Color(0xFF6200EE),
+          //       onPressed: () {
+          //         // Perform some action
+          //       },
+          //       child: const Text('ACTION 1'),
+          //     ),
+          //     FlatButton(
+          //       textColor: const Color(0xFF6200EE),
+          //       onPressed: () {
+          //         // Perform some action
+          //       },
+          //       child: const Text('ACTION 2'),
+          //     ),
+          //   ],
+          // ),
 
-              child: Column(
-                children: [
-                  Padding(
-                    padding:
-                    EdgeInsets.symmetric(horizontal: 0.0, vertical: 4.0),
-                    child: Column(
-                      children: [
-
-                        Container(
-                          width: double.infinity,
-                          height: 400,
-                          //color: Colors.black26,
-                          decoration: BoxDecoration(
-                            // boxShadow: [BoxShadow(
-                            //   color: Colors.black26,
-                            //   offset: Offset(0,2),
-                            //   blurRadius: 1.0,
-                            // ),],
-                              image: DecorationImage(
-                                  image:
-                                  AssetImage('assets/images/sample3.jpeg'),
-                                  fit: BoxFit.fill)),
-                        ),
-                        ListTile(
-                          dense: true,
-                          horizontalTitleGap: 10.0,
-                          minLeadingWidth : 0,
-                          //tileColor: const Color(0xff353D5D),
-                          leading:  Container(
-                            //margin: EdgeInsets.all(0.0),
-
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              // color: Colors.red,
-                              shape: BoxShape.circle,
-                              // boxShadow: [
-                              //   BoxShadow(
-                              //     color: Colors.black45,
-                              //     offset: Offset(0, 2),
-                              //     blurRadius: 6.0,
-                              //   )
-                              // ],
-                            ),
-                            child: CircleAvatar(
-                              child: ClipOval(
-                                child: Image(
-                                  height: 40,
-                                  width: 40,
-                                  image: AssetImage(
-                                      'assets/images/default-user.png'),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                          title: Text('Shavarma Daddy (@shavarma_daddy)'),
-                          subtitle: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Image.asset('assets/images/rating.png', height: 12,)),
-                          contentPadding:EdgeInsets.fromLTRB(10,0,15,0),
-                          trailing: SizedBox(
-                            width: 100,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.favorite_border,
-                                  color: const Color(0xff9146FF),
-                                  size: 24,
-                                ),
-                                Icon(
-                                  Icons.bookmark_border_outlined,
-                                  color: const Color(0xff9146FF),
-                                  size: 24,
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(bottom: 5),
-                                    child: Icon(
-                                      Icons.ios_share_rounded,
-                                      color: const Color(0xff9146FF),
-                                      size: 24,
-                                    )),
-                                // Image.asset('assets/images/like.png', width: 24, height: 24,),
-                                // Image.asset('assets/images/bookmark.png', width: 24, height: 22,),
-                                // Image.asset('assets/images/share.png', width: 24,),
-                              ],
-                            ),
-                          ),
-
-//trailing:  Image.asset('assets/images/like.png', width: 24,),
-                        ),
-                        Row(
-                          children: [
-                            Flexible(
-                                child:Padding(
-                                  padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                  child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-                                    textAlign: TextAlign.start,),
-                                )),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-          const Divider(
-            height: 30,
-            thickness: 0.5,
-            // indent: 20,
-            // endIndent: 20,
-            color: Colors.white12,
-          ),
         ],
+      ),
+      ),
+        Card(
+          color: const Color(0xff1D2531),
+
+          elevation: 10,
+          // clipBehavior: Clip.antiAlias,
+          child: Column(
+            children: [
+              Image.asset('assets/images/sample2.jpeg'),
+              ListTile(
+                contentPadding: const EdgeInsets.fromLTRB(5,5,15,5),
+                dense: true,
+                horizontalTitleGap: 10.0,
+                minLeadingWidth : 0,
+                leading:  Container(
+                  width: 50,
+                  height: 50,
+                  child: CircleAvatar(
+                    child: ClipOval(
+                      child: Image(
+                        height: 50,
+                        // width: 50,
+                        image: AssetImage(
+                            'assets/images/default-user.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                title: Text('Shavarma Daddy\n(@shavarma_daddy)', style: TextStyle(fontSize: 12),),
+                subtitle: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Image.asset('assets/images/rating.png', height: 12,)),
+                trailing: SizedBox(
+                  width: 100,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.favorite_border,
+                        color: const Color(0xff9146FF),
+                        size: 24,
+                      ),
+                      Icon(
+                        Icons.bookmark_border_outlined,
+                        color: const Color(0xff9146FF),
+                        size: 24,
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(bottom: 5),
+                          child: Icon(
+                            Icons.ios_share_rounded,
+                            color: const Color(0xff9146FF),
+                            size: 24,
+                          )),
+                      // Image.asset('assets/images/like.png', width: 24, height: 24,),
+                      // Image.asset('assets/images/bookmark.png', width: 24, height: 22,),
+                      // Image.asset('assets/images/share.png', width: 24,),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(5,0,5,20),
+                child: Text(
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                  // style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                ),
+              ),
+              // ButtonBar(
+              //   alignment: MainAxisAlignment.start,
+              //   children: [
+              //     FlatButton(
+              //       textColor: const Color(0xFF6200EE),
+              //       onPressed: () {
+              //         // Perform some action
+              //       },
+              //       child: const Text('ACTION 1'),
+              //     ),
+              //     FlatButton(
+              //       textColor: const Color(0xFF6200EE),
+              //       onPressed: () {
+              //         // Perform some action
+              //       },
+              //       child: const Text('ACTION 2'),
+              //     ),
+              //   ],
+              // ),
+
+            ],
+          ),
+        ),
+        Card(
+          color: const Color(0xff1D2531),
+
+          elevation: 10,
+          // clipBehavior: Clip.antiAlias,
+          child: Column(
+            children: [
+              Image.asset('assets/images/sample1.jpeg'),
+              ListTile(
+                contentPadding: const EdgeInsets.fromLTRB(5,5,15,5),
+                dense: true,
+                horizontalTitleGap: 10.0,
+                minLeadingWidth : 0,
+                leading:  Container(
+                  width: 50,
+                  height: 50,
+                  child: CircleAvatar(
+                    child: ClipOval(
+                      child: Image(
+                        height: 50,
+                        // width: 50,
+                        image: AssetImage(
+                            'assets/images/default-user.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                title: Text('Shavarma Daddy\n(@shavarma_daddy)', style: TextStyle(fontSize: 12),),
+                subtitle: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Image.asset('assets/images/rating.png', height: 12,)),
+                trailing: SizedBox(
+                  width: 100,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.favorite_border,
+                        color: const Color(0xff9146FF),
+                        size: 24,
+                      ),
+                      Icon(
+                        Icons.bookmark_border_outlined,
+                        color: const Color(0xff9146FF),
+                        size: 24,
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(bottom: 5),
+                          child: Icon(
+                            Icons.ios_share_rounded,
+                            color: const Color(0xff9146FF),
+                            size: 24,
+                          )),
+                      // Image.asset('assets/images/like.png', width: 24, height: 24,),
+                      // Image.asset('assets/images/bookmark.png', width: 24, height: 22,),
+                      // Image.asset('assets/images/share.png', width: 24,),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(5,0,5,20),
+                child: Text(
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                  // style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                ),
+              ),
+              // ButtonBar(
+              //   alignment: MainAxisAlignment.start,
+              //   children: [
+              //     FlatButton(
+              //       textColor: const Color(0xFF6200EE),
+              //       onPressed: () {
+              //         // Perform some action
+              //       },
+              //       child: const Text('ACTION 1'),
+              //     ),
+              //     FlatButton(
+              //       textColor: const Color(0xFF6200EE),
+              //       onPressed: () {
+              //         // Perform some action
+              //       },
+              //       child: const Text('ACTION 2'),
+              //     ),
+              //   ],
+              // ),
+
+            ],
+          ),
+        ),
+      ],
+    )
+    ),
+
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -598,7 +507,7 @@ class _HomeState extends State<Home> {
                // child: Icon(Icons.account_circle_outlined, size: 28, color: const Color(0xfff0f0f0),),
                 child: Image.asset(
                   'assets/images/settings-unselected-icon.png',
-                  width: 22,
+                  width: 24,
                 ),
               ),
               label: 'More',

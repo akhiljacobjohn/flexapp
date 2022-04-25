@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:atlas/login.dart';
 import 'package:atlas/privacy_policy.dart';
 import 'package:atlas/signup.dart';
 import 'package:atlas/terms_of_service.dart';
@@ -147,7 +145,7 @@ class _IntroScreenState extends State<IntroScreen> {
               onPressed: () {
                 // print(conn.checkConnection(context));
 
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => Signup()),
                 );
