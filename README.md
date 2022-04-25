@@ -1,3 +1,3 @@
 # Flex App
 
-Flex - Discover local businesses around you, instantly.
+Flex - Discover local businesses near you, instantly.
